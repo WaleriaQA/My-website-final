@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 
 const Resize = () => {
-const [isPortrait, setIsPortrait] = useState(window.innerWidth > window.innerHeight);
+  const [isPortrait, setIsPortrait] = useState(
+    window.innerWidth > window.innerHeight
+  );
 
   useEffect(() => {
     const handleResize = () => {
@@ -14,7 +16,7 @@ const [isPortrait, setIsPortrait] = useState(window.innerWidth > window.innerHei
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-return isPortrait
+  return isPortrait;
 };
 
 export default Resize;

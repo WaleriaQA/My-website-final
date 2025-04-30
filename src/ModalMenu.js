@@ -30,7 +30,6 @@ const ModalMenu = ({ show, onClose, children }) => {
       onClick={onClose}
     >
       <div className="modal-menu-content" onClick={(e) => e.stopPropagation()}>
-        
         {children}
       </div>
     </div>
