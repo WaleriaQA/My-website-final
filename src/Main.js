@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from "react";
-import ModalWindow from "./ModalWindow";
 import AllGallery from "./AllGallery";
 import Banners from "./Banners";
 import YouTubeThumbnails from "./YouTubeThumbnails";
@@ -79,22 +78,23 @@ const Main = () => {
   const reviews = [
     <Review
       key={1}
-      name="Wladislaw M."
-      link="https://t.me/itbulgaria8"
-      text="Текст отзыва, оставленного студентом на Юдеми,
-    который можно открыть нажав на кнопку в правом верхнем углу этого блока."
+      name="Milen Y."
+      link="https://www.udemy.com/course/cypress-guide-ru/?couponCode=LETSLEARNNOW#reviews"
+      text="Очень качественный курс для начинающих, рекомендую пройти, даже если вы уже знакомы с Cypress, здесь вы точно узнаете что-то новое для себя. Информации много и вся она очень детально объяснена."
     />,
     <Review
       key={2}
-      name="Maxim L."
-      link="https://t.me/itbulgaria8"
-      text="Отзыва, оставленный Максимом."
+      name="Oleh V."
+      link="https://www.udemy.com/course/cypress-guide-ru/?couponCode=LETSLEARNNOW#reviews"
+      text="Курс понравился.
+
+Отлично подойдет для совсем новичков Cypress, рассказывается все на очень простом уровне. По идее, даже с нулевыми знаниями в JS и автотестах - можно научиться делать такие же тесты, хотя для полноценной работы это только первый шаг."
     />,
     <Review
       key={3}
-      name="Wyacheslaw K."
-      link="https://t.me/itbulgaria8"
-      text="Подписывайся на Телеграм канал https://t.me/itbulgaria8"
+      name="Elina P."
+      link="https://www.udemy.com/course/cypress-guide-ru/?couponCode=LETSLEARNNOW#reviews"
+      text="Прошла курс. Он прекрасно подходит для тех, кто только начинает знакомиться с автоматизацией тестирования. Ментор подробно объясняет основы Cypress, что делает материал доступным и понятным даже для полных чайников в данной теме. Практические задания помогают закрепить знания на практике. Рекомендую!"
     />,
   ];
 
@@ -165,18 +165,18 @@ const Main = () => {
         {isPortrait ? (
           <div className="navigation">
             <div className="menu">
-              <a onClick={upButton}>Обо мне</a>
+              <a onClick={upButton}>Курсы</a>
               <a
                 onClick={(e) => toBlock(e.target.getAttribute("height"))}
                 height="700"
               >
-                Услуги
+                Планируется
               </a>
               <a
                 onClick={(e) => toBlock(e.target.getAttribute("height"))}
                 height="1230"
               >
-                Портфолио
+                Обо мне
               </a>
               <a
                 onClick={(e) => toBlock(e.target.getAttribute("height"))}
@@ -193,8 +193,8 @@ const Main = () => {
             </div>
 
             <div className="header-buttons">
-              <button onClick={handleOpenModal} className="btn">
-                Связаться
+              <button onClick={() => window.open("https://www.udemy.com/user/waleria-stojanowska/", "_blank")} className="btn">
+              Мой профиль Udemy
               </button>
 
               <a
@@ -287,7 +287,7 @@ const Main = () => {
           onClick={(e) => toBlock(e.target.getAttribute("height"))}
           height="1230"
         >
-          Портфолио
+          Планируется
         </a>
         <a
           onClick={(e) => toBlock(e.target.getAttribute("height"))}
@@ -303,276 +303,125 @@ const Main = () => {
         </a>
       </ModalMenu>
 
-      <ModalWindow show={showModal} onClose={handleCloseModal}>
-        <h2
-          style={{
-            color: "#4824ff",
-            fontSize: isPortrait ? "40px" : "15vw",
-            marginTop: isPortrait ? "" : "0",
-          }}
-        >
-          Контакты
-        </h2>
-        {isPortrait ? (
-          <p style={{ fontSize: "22px" }}>
-            Вы можете связаться со мной в Телеграм <br />
-            или Инстаграм{" "}
-          </p>
-        ) : (
-          <p style={{ fontSize: "22px" }}>
-            Вы можете связаться со мной в Телеграм <br />
-            или Инстаграм{" "}
-          </p>
-        )}
-      </ModalWindow>
+      
 
       {isPortrait ? (
         <div className="welcome-block">
           <div className="first-block">
             <h1>
-              Тестировщик <span className="title">Workford</span>
+               <span className="title">Курсы без переплат —  <br /> всё по честной цене</span>
             </h1>
-            <h2 style={{ marginBottom: "7%", marginTop: "7%" }}>
-              Создаю <span style={{ color: "#4824ff" }}>продаваемый</span>
-              <br />и<span style={{ color: "#4824ff" }}> уникальный</span>
-              дизайн <br /> под ваши запросы
-            </h2>
-            <h3>
-              Занимаюсь тестированием
-              <br />
-              на протяжении <span style={{ color: "#4824ff" }}>9 лет</span>
-            </h3>
+            
           </div>
-          <div className="main-image-box">
-            <img
-              classname="first-image-layer"
-              src="./images/cat.png"
-              draggable="false"
-            />
-            {/* <img classname="second-image-layer" src='./icons/moon1.png' 
-    draggable="false"/> */}
-            <img
-              classname="third-image-layer"
-              src={
-                theme === "light"
-                  ? "./images/logo192.png"
-                  : "./images/logo512.png"
-              }
-              draggable="false"
-            />
-            <img
-              classname="fourth-image-layer"
-              src="./images/logo192.png"
-              draggable="false"
-            />
-            <img
-              classname="fifth-image-layer"
-              src="./images/logo192.png"
-              draggable="false"
-            />
-          </div>
+        
         </div>
       ) : (
         <div className="welcome-block mobile">
           <div className="main-image-box mobile">
-            <img
-              classname="first-image-layer mobile"
-              src="./images/cat.png"
-              draggable="false"
-            />
-            {/* <img classname="second-image-layer" src='./icons/moon1.png' 
-    draggable="false"/> */}
-            <img
-              classname="third-image-layer mobile"
-              src={
-                theme === "light"
-                  ? "./images/logo192.png"
-                  : "./images/logo512.png"
-              }
-              draggable="false"
-            />
-            <img
-              classname="fourth-image-layer mobile"
-              src="./images/logo192.png"
-              draggable="false"
-            />
-            <img
-              classname="fifth-image-layer mobile"
-              src="./images/logo192.png"
-              draggable="false"
-            />
+            
+            
+           
           </div>
 
           <div className="first-block mobile">
             <h1>
-              Тестировщик <span className="title">Workford</span>
+              Тестировщик <span className="title">Курсы без переплат —  <br /> всё по честной цене</span>
             </h1>
-            <h2 style={{ marginBottom: "7%", marginTop: "7%" }}>
-              Создаю <span style={{ color: "#4824ff" }}>продаваемый</span> и{" "}
-              <span style={{ color: "#4824ff" }}> уникальный </span>
-              дизайн под ваши запросы
-            </h2>
-            <h3>
-              Занимаюсь тестированием
-              <br />
-              на протяжении <span style={{ color: "#4824ff" }}>9 лет</span>
-            </h3>
+            
 
-            <button onClick={handleOpenModal} className="btn mobile">
-              Связаться
+            <button onClick={() => window.open("https://www.udemy.com/user/waleria-stojanowska/", "_blank")} className="btn mobile">
+              Мой профиль Udemy
             </button>
           </div>
         </div>
       )}
 
-      <div
-        className={isPortrait ? "service-block" : "service-block mobile"}
-        draggable="false"
-      >
-        <h1 style={{ fontSize: isPortrait ? "52px" : "10vw" }}>Услуги</h1>
-        <p style={{ fontSize: isPortrait ? "27px" : "6vw" }}>
-          Создаю
-          <span style={{ fontSize: "#4824ff" }}>
-            {" "}
-            курсы по программированию{" "}
-          </span>{" "}
-          тестированию{" "}
+<section className="courses-section">
+  
+  <div className="courses-container">
+
+    <div className="course-card">
+      <img 
+      src="./images/cy.png" 
+      alt="Cypress для новичков" 
+      onClick={() => window.open("https://www.udemy.com/course/cypress-guide-ru/?couponCode=LETSLEARNNOW", "_blank")}
+    style={{ cursor: "pointer" }}/>
+      
+      <div className="course-content">
+      <h3>Cypress для новичков: Твой путь к автоматизации тестирования</h3>
+
+      <div className="course-author">
+  <div className="avatar">
+    <img src="./images/me.png" alt="Waleria Stojanowska" />
+  </div>
+  <div className="author-info">
+    <p className="author-name">Waleria Stojanowska</p>
+    <p className="author-title">QA Engineer, MIA</p>
+  </div>
+</div>
+      <p className="course-description">
+        Освоение Cypress для эффективной автоматизации тестирования веб-приложений.
         </p>
+        <div className="course-button-wrapper">
+      <a href="https://www.udemy.com/course/cypress-guide-ru/?couponCode=LETSLEARNNOW" target="_blank" rel="noopener noreferrer">Смотреть курс</a>
+    </div>
+    </div>
+    </div>
+    <div className="course-card">
+      <img src="./images/js.png" alt="Краш-курс по JavaScript" onClick={() => window.open("https://www.udemy.com/course/javascript-guide-ru/?couponCode=LETSLEARNNOW", "_blank")}
+    style={{ cursor: "pointer" }}/>
+    
+  <div className="course-content">
+      <h3>Краш-курс по JavaScript для тестировщика: основы с нуля</h3>
+      <div className="course-author">
+  <div className="avatar">
+    <img src="./images/me.png" alt="Waleria Stojanowska" />
+  </div>
+  <div className="author-info">
+    <p className="author-name">Waleria Stojanowska</p>
+    <p className="author-title">QA Engineer, MIA</p>
+  </div>
+</div>
+      <p className="course-description">JavaScript - Освойте основы за 5 часов.</p>
+      
+    <div className="course-button-wrapper">
+      <a href="https://www.udemy.com/course/javascript-guide-ru/?couponCode=LETSLEARNNOW" target="_blank" rel="noopener noreferrer">Смотреть курс</a>
+    </div>
+    </div>
+    </div>
+    <div className="course-card">
+      <img src="./images/qainterview.png" alt="Подготовка к интервью на позицию QA" onClick={() => window.open("https://www.udemy.com/course/qa-interview-questions/?couponCode=LETSLEARNNOW", "_blank")}
+    style={{ cursor: "pointer" }}/>
+      <div className="course-content">
+      <h3>Подготовка к интервью на позицию QA: от новичка до эксперта</h3>
+      <div className="course-author">
+  <div className="avatar">
+    <img src="./images/me.png" alt="Waleria Stojanowska" />
+  </div>
+  <div className="author-info">
+    <p className="author-name">Waleria Stojanowska</p>
+    <p className="author-title">QA Engineer, MIA</p>
+  </div>
+</div>
+      <p className="course-description">Более 700 вопросов с реальных собеседований для освоения теории тестирования и успешного прохождения интервью.</p>
+      <div className="course-button-wrapper">
+      <a href="https://www.udemy.com/course/qa-interview-questions/?couponCode=LETSLEARNNOW" target="_blank" rel="noopener noreferrer">Смотреть курс</a>
+    </div>
+    </div>
+    </div>
+  </div>
+</section>
 
-        <div style={{ display: isPortrait ? "flex" : "" }}>
-          <p className={isPortrait ? "tag" : "tag mobile"}>
-            <p
-              className={`tag-icon ${
-                theme === "light" ? "tag-icon icon-dark" : "tag-icon icon-light"
-              }
-                                 ${isPortrait ? "" : "mobile"}`}
-            />
-            и другим направлениям{" "}
-          </p>
 
-          <p className={isPortrait ? "tag" : "tag mobile"}>
-            <p
-              className={`tag-icon ${
-                theme === "light" ? "tag-icon icon-dark" : "tag-icon icon-light"
-              }
-                                 ${isPortrait ? "" : "mobile"}`}
-            />
-            Подготовка к собеседованию на позицию QA{" "}
-          </p>
-
-          <p className={isPortrait ? "tag" : "tag mobile"}>
-            <p
-              className={`tag-icon ${
-                theme === "light" ? "tag-icon icon-dark" : "tag-icon icon-light"
-              }
-                                 ${isPortrait ? "" : "mobile"}`}
-            />
-            <p className={isPortrait ? "tag" : "tag mobile"}>Cypress </p>
-            <p
-              className={`tag-icon ${
-                theme === "light" ? "tag-icon icon-dark" : "tag-icon icon-light"
-              }
-                                 ${isPortrait ? "" : "mobile"}`}
-            />
-            <p className={isPortrait ? "tag" : "tag mobile"}>Postman </p>
-            <p
-              className={`tag-icon ${
-                theme === "light" ? "tag-icon icon-dark" : "tag-icon icon-light"
-              }
-                                 ${isPortrait ? "" : "mobile"}`}
-            />
-            Как пользоваться ИИ{" "}
-          </p>
-        </div>
-        <div
-          style={{
-            display: isPortrait ? "flex" : "",
-            marginTop: isPortrait ? "16px" : "",
-          }}
-        >
-          <p className={isPortrait ? "tag" : "tag mobile"}>
-            <p
-              className={`tag-icon ${
-                theme === "light" ? "tag-icon icon-dark" : "tag-icon icon-light"
-              }
-                                 ${isPortrait ? "" : "mobile"}`}
-            />
-            Github{" "}
-          </p>
-
-          <p className={isPortrait ? "tag" : "tag mobile"}>
-            <p
-              className={`tag-icon ${
-                theme === "light" ? "tag-icon icon-dark" : "tag-icon icon-light"
-              }
-                                 ${isPortrait ? "" : "mobile"}`}
-            />
-            React Js{" "}
-          </p>
-        </div>
-
-        <p style={{ fontSize: isPortrait ? "27px" : "6vw" }}>
-          Открыта для обсуждения создания курсов и по другим направлениям.{" "}
-          <br />
-          Детальней готова обсудить при
-          <span
-            style={{ color: "#4824ff", cursor: "pointer" }}
-            onClick={handleOpenModal}
-          >
-            личной переписке
-          </span>
-          .
-        </p>
-      </div>
+      
 
       <div className="portfolio-block">
-        <div className={isPortrait ? "first-block" : "first-block mobile"}>
-          <h1 className={isPortrait ? "main-title" : "main-title mobile"}>
-            Портфолио
+        
+        <div className="title-wrapper">
+          <h1 className= "main-title">
+          <span className="title">Планируется</span>
           </h1>
-          <div
-            style={{
-              position: "absolute",
-              marginLeft: isPortrait ? "-660px" : "-75vw",
-            }}
-          >
-            <p
-              className={
-                isPortrait ? "gradient-part-one" : "gradient-part-one mobile"
-              }
-            ></p>
-            {isPortrait ? (
-              <p className="title-border">Портф</p>
-            ) : (
-              <p className="title-border mobile">Пор</p>
-            )}
           </div>
-
-          <div
-            style={{
-              position: "absolute",
-              marginLeft: isPortrait ? "620px" : "75vw",
-            }}
-          >
-            <p
-              className={
-                isPortrait ? "gradient-part-two" : "gradient-part-two mobile"
-              }
-            ></p>
-            {isPortrait ? (
-              <p className="title-border">фолио</p>
-            ) : (
-              <p className="title-border mobile">лио</p>
-            )}
-          </div>
-
-          <img
-            className={isPortrait ? "down-icon" : "down-icon mobile"}
-            src="./icons/down.png"
-            draggable="false"
-          />
-        </div>
-
         <div classname={isPortrait ? "" : "filter-scrollbar"}>
           <div
             style={{
@@ -596,37 +445,7 @@ const Main = () => {
                       ${isPortrait ? "" : "mobile"}`}
               onClick={() => setSelectedCategory("Banners")}
             >
-              Баннеры
-            </p>
-
-            <p
-              className={`tag ${
-                selectedCategory === "YouTubeThumbnails" ? "selected" : ""
-              }
-                      ${isPortrait ? "" : "mobile"}`}
-              onClick={() => setSelectedCategory("YouTubeThumbnails")}
-            >
-              Превью Ютюб
-            </p>
-
-            <p
-              className={`tag ${
-                selectedCategory === "YouTubeDesign" ? "selected" : ""
-              }
-                      ${isPortrait ? "" : "mobile"}`}
-              onClick={() => setSelectedCategory("YouTubeDesign")}
-            >
-              Оформление Ютюб
-            </p>
-
-            <p
-              className={`tag ${
-                selectedCategory === "InstagramStories" ? "selected" : ""
-              }
-                      ${isPortrait ? "" : "mobile"}`}
-              onClick={() => setSelectedCategory("InstagramStories")}
-            >
-              Сторис Инстаграм
+              Планируемые курсы
             </p>
           </div>
         </div>
@@ -642,12 +461,12 @@ const Main = () => {
       <div className={isPortrait ? "review-block" : "review-block mobile"}>
         <h1 style={{ fontSize: isPortrait ? "50px" : "10vw" }}>Отзывы</h1>
         <p className={isPortrait ? "description" : "description mobile"}>
-          Отзывы клиентов, написанные со своих
+          Отзывы учащихся, написанные с их
           <span className="selecting"> личных аккаунтов</span>
-          Телеграм. Все прозрачно! <br /> Любой отзыв можно{" "}
-          <span className="selecting"> открыть</span> в Телеграм и{" "}
-          <span className="selecting"> спросить</span> о впечатлениях работы со
-          мной <br /> у создателя отзыва лично.
+          Udemy. Все прозрачно! <br /> Любой отзыв можно{" "}
+          <span className="selecting"> открыть</span> на Udemy и{" "}
+          <span className="selecting"> спросить</span> о впечатлениях от моих курсов
+           <br /> лично у автора отзыва.
         </p>
 
         <div

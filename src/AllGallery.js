@@ -6,8 +6,8 @@ const AllGallery = () => {
   const isPortrait = Resize();
   return (
     <div style={{ pointerEvents: isPortrait ? "" : "none" }}>
-      <Carousel direction="left" />
-      <Carousel direction="right" />
+      <Carousel/>
+     
     </div>
   );
 };
