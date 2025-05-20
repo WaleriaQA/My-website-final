@@ -16,7 +16,7 @@ const Review = (props) => {
           >
             <h2 style={{ fontSize: isPortrait ? "" : "7vw" }}>{props.name}</h2>
             <a className="link" href={props.link} target="_blank">
-              <p className="telegram-icon" />
+              
               <p className="array-corner-icon" />
             </a>
           </div>

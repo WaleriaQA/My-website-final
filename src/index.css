@@ -1,5 +1,5 @@
 *::-webkit-scrollbar {
-  width: 4px;
+  width: 5px;
 }
 
 *::-webkit-scrollbar-thumb {
@@ -73,7 +73,8 @@ code {
 header {
   margin-left: -5vw;
   margin-right: -5vw;
-  position: fixed;
+   margin-bottom: 0;
+  position:fixed;
   width: 90vw;
   padding: 0 5vw 0 5vw;
   background: var(--header-background);
@@ -86,12 +87,14 @@ header {
   justify-content: space-between;
   align-items: center;
   height: 13vh;
+ 
 }
 
 .menu {
   height: 100px;
   width: 50vw;
   align-content: center;
+
 }
 
 header a {
@@ -115,6 +118,7 @@ header a:hover {
 .header-buttons-mobile {
   display: flex;
   gap: 5vw;
+  width: 50%;
 }
 
 .btn {
@@ -189,7 +193,7 @@ header a:hover {
 }
 
 .icon.telegram.dark {
-  content: url(/public/icons/telegram-blue.png);
+  content: url(/public/icons/telegramw.png);
 }
 
 .icon.instagram.light,
@@ -259,9 +263,15 @@ header a:hover {
 /*   ---   WELCOME BLOCK   ---   */
 
 .welcome-block {
-  height: 800px;
-  display: flex;
-  place-items: center;
+   display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+    padding-top: 150px;
+  height: 80vh; 
+  margin-bottom: -550px; 
+  
 }
 
 .welcome-block.mobile {
@@ -295,7 +305,9 @@ header a:hover {
 .welcome-block.mobile h3 {
   font-size: 15px;
 }
+
 .title {
+  font-size: 48px;
   background: linear-gradient(
     to right,
     #4824ff,
@@ -307,10 +319,34 @@ header a:hover {
     #4824ff
   );
   background-clip: text;
+  -webkit-background-clip: text;
   color: transparent;
+  -webkit-text-fill-color: transparent;
   background-size: 200%;
   animation: gradientAnimation 5s linear infinite;
-  font-size: 50px; 
+ 
+}
+
+.title-heading {
+  font-size: 48px;
+  background: linear-gradient(
+    to right,
+    #4824ff,
+    #4824ff,
+    #85ebff,
+    var(--main-elements-color),
+    #85aeff,
+    #4824ff,
+    #4824ff
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  background-size: 200%;
+  animation: gradientAnimation 5s linear infinite;
+  margin-top: -550px;
+ 
 }
 
 @keyframes gradientAnimation {
@@ -322,18 +358,24 @@ header a:hover {
   }
 }
 
-.welcome-block {
+/* .welcome-block {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   height: 80vh; 
   padding-top: 150px;
   text-align: center;
-}
+} */
 
 .first-block {
-  max-width: 900px;
-  padding: 0 20px;
+  /* max-width: 900px;
+  padding: 0 20px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+   width: 100%;
 }
 
 .first-block h1 {
@@ -343,13 +385,14 @@ header a:hover {
 
 
 @media (max-width: 768px) {
-  .title {
-    font-size: 36px;
+  .welcome-block {
+    padding-top: 40px; /* Отступы для мобильных устройств */
+    height: auto; /* Высота автоматически подстраивается */
+    align-items: center; /* Центрируем содержимое */
   }
 
-  .welcome-block {
-    padding-top: 40px;
-    height: auto;
+  .title {
+    font-size: 36px; /* Размер текста заголовка для мобильных */
   }
 }
 
@@ -403,13 +446,13 @@ header a:hover {
 /*   ---   COURSES CARDS   ---   */
 
 .courses-section {
-  padding: 10px 20px;
+    padding: 60px 200px;
   background-color: #f9f9ff;
   text-align: center;
-  padding-top: 0;
-  margin-top: -500px;
-  margin-bottom: 100px;
-  
+  margin: 0 auto 60px;
+  border-radius: 28px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 
@@ -418,7 +461,12 @@ header a:hover {
   flex-wrap: wrap;
   gap: 24px;
   justify-content: center;
-  align-items: stretch;
+  /* align-items: stretch; */
+  padding: 0;
+  box-sizing: border-box;
+
+  
+  
 }
 
 .course-card {
@@ -515,6 +563,7 @@ header a:hover {
   margin: -10px;
   color: #666;
   padding-left: 11px;
+ 
 }
 
 
@@ -522,6 +571,7 @@ header a:hover {
   font-size: 20px;
   color: black;
   margin-bottom: 60px;
+   
 }
 
 .course-card .author-name,
@@ -547,11 +597,185 @@ header a:hover {
   color: white;
   text-decoration: none;
   padding: 10px 16px;
-  border-radius: 8px;
+  border-radius: 12px;
   transition: background-color 0.3s ease;
 }
 .course-button-wrapper a:hover {
   background-color: #341bcc;
+}
+
+@media (max-width: 768px) {
+  .courses-section {
+    padding: 60px 20px;
+  }
+
+  .courses-container {
+     /* display: flex; */
+    flex-direction: column;
+    align-items: center;
+    /* padding: 0;
+    gap: 24px; */
+  }
+
+  .course-card {
+    width: 108%;
+    max-width: 390px;
+    /* margin: 0 auto;
+     box-sizing: border-box; */
+  }
+
+  .course-content {
+    padding: 16px;
+    text-align: center;
+  }
+
+  .course-card h3 {
+    font-size: 18px;
+  }
+
+  .course-description {
+    font-size: 15px;
+  }
+
+  .course-author {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .author-name,
+  .author-title {
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .course-button-wrapper {
+    justify-content: center;
+  }
+
+  .course-button-wrapper a {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+
+  .avatar {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+
+
+
+/*   ---   ABOUT ME BLOCK   ---   */
+
+.about-me {
+  background-color: rgba(72, 36, 255, 0.05);
+  padding: 60px 20px;
+  border-radius: 28px;
+  max-width: 1100px;
+  margin: 0 auto 100px auto;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  text-align: center; 
+  
+}
+
+.about-me-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.about-me-text-box {
+  flex: 1;
+  min-width: 280px;
+  
+}
+
+.about-me-photo-box {
+  flex: 0 0 280px;
+  display: flex;
+  justify-content: center;
+}
+
+.about-me-photo {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.about-me-title {
+  display: block;
+  font-size: 48px;
+  font-weight: bold;
+  margin: 0 20px 0 300px;
+  background: linear-gradient(
+    to right,
+    #4824ff,
+    #4824ff,
+    #85ebff,
+    var(--main-elements-color),
+    #85aeff,
+    #4824ff,
+    #4824ff
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  background-size: 200%;
+  animation: gradientAnimation 5s linear infinite;
+
+}
+
+.about-me-text {
+ 
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  text-align: left;
+
+}
+
+.about-me-button {
+  padding: 12px 24px;
+  font-size: 18px;
+  background-color: #4824ff;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 0 auto 20px 300px; 
+}
+
+.about-me-button:hover {
+  background-color: #341bcc;
+  
+}
+
+@media (max-width: 768px) {
+  .about-me-content {
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-me-title {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .about-me-photo {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px;
+  }
 }
 
 
@@ -648,7 +872,7 @@ header a:hover {
   color: #4824ff;
   margin: 0 12px 0 0;
   padding: 8px 22px 8px 22px;
-  border-radius: 24px;
+  border-radius: 12px;
   border: 1px solid var(--elements-color);
   cursor: pointer;
   transition: 0.5s ease-in-out;
@@ -689,9 +913,11 @@ header a:hover {
 
 .review-block {
   margin: 80px 0px;
-  height: 580px;
-  background: #4824ff;
+  height: 770px;
+  background: rgba(72, 36, 255, 0.30);
   border-radius: 28px;
+  
+  
 }
 
 .review-block.mobile {
@@ -707,9 +933,10 @@ header a:hover {
 .review-block .description {
   color: white;
   text-align: center;
-  margin-top: -12px;
   font-size: 22px;
   line-height: 32px;
+    margin: 0 12px 0 0;
+  padding: 8px 22px 30px 22px;
 }
 
 .review-block .description.mobile {
@@ -773,6 +1000,8 @@ header a:hover {
   content: url(/public/icons/array-next.png);
   width: 20px;                 /* Укажи размеры явно */
   height: 20px;
+  
+  
 }
 
 .next-button:hover {
@@ -785,6 +1014,7 @@ header a:hover {
 
 .review-card {
   min-width: 420px;
+  margin-bottom: 20px;
 }
 
 .review-card.mobile {
@@ -792,7 +1022,7 @@ header a:hover {
 }
 
 .review-content {
-  height: 230px;
+  height: 385px;
   width: 384px;
   background: white;
   color: black;
@@ -823,27 +1053,19 @@ header a:hover {
   display: flex;
   position: right;
   height: 40px;
-  width: 70px;
+  width: 85px;
   background: black;
   border-radius: 24px;
   cursor: pointer;
   border: 2px solid black;
   transition: 0.5s ease-in-out;
+  justify-content: flex-end; /* выравнивает стрелку вправо */
+  align-items: center;
 }
 
 .review-block .link:hover {
   border: 2px double #4824ff;
   filter: drop-shadow(0px 0px 25px #4824ff90);
-}
-
-.review-block .telegram-icon {
-  margin: -5px -4px;
-  padding: 0;
-  position: relative;
-  content: url(/public/icons/telegram-blue.png);
-  background: none;
-  scale: 0.5;
-  height: 50px;
 }
 
 .review-block .array-corner-icon {
@@ -861,6 +1083,11 @@ header a:hover {
 .guarantees-block {
   height: 540px;
   font-size: 26px;
+  /* text-align: center;  */
+}
+
+.guarantees-block h1 {
+  text-align: center;
 }
 
 .guarantees-block.mobile {

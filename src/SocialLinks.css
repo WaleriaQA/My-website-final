@@ -1,0 +1,54 @@
+.social-section {
+  background-color: #f9f9ff;
+  text-align: center;
+  padding: 1px 20px;
+   border-radius: 28px;
+}
+
+.social-title {
+  background: linear-gradient(
+    to right,
+    #4824ff,
+    #4824ff,
+    #85ebff,
+    var(--main-elements-color),
+    #85aeff,
+    #4824ff,
+    #4824ff
+  );
+  background-clip: text;
+  color: transparent;
+  background-size: 200%;
+  animation: gradientAnimation 5s linear infinite;
+  font-size: 50px; 
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.social-icons img {
+    width: 150px; 
+  height: 150px;
+  transition: transform 0.3s ease;
+  object-fit: contain;  /* сохранить пропорции и вписать */
+  margin: 0 10px;
+}
+
+.social-icons img[alt="Instagram"] {
+  scale: 0.44;
+  margin-left: -15px;
+}
+.social-icons img[alt="Telegram"] {
+  scale: 0.4;
+  margin-left: -50px;
+
+}
+
+.social-icons img:hover {
+  transform: scale(1.1);
+}
+

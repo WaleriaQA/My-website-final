@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import AllGallery from "./AllGallery";
-import Banners from "./Banners";
+
 import YouTubeThumbnails from "./YouTubeThumbnails";
 import YouTubeDesign from "./YouTubeDesign";
 import InstagramStories from "./InstagramStories";
@@ -8,6 +8,8 @@ import Review from "./Review";
 import Theme from "./Theme";
 import ModalMenu from "./ModalMenu";
 import Resize from "./Resize";
+import SocialLinks from "./SocialLinks";
+import Banners from "./Banners";
 
 const Main = () => {
   const isPortrait = Resize();
@@ -170,13 +172,13 @@ const Main = () => {
                 onClick={(e) => toBlock(e.target.getAttribute("height"))}
                 height="700"
               >
-                Планируется
+                Обо мне
               </a>
               <a
                 onClick={(e) => toBlock(e.target.getAttribute("height"))}
                 height="1230"
               >
-                Обо мне
+                Планируется
               </a>
               <a
                 onClick={(e) => toBlock(e.target.getAttribute("height"))}
@@ -189,6 +191,12 @@ const Main = () => {
                 height="2500"
               >
                 Гарантии
+              </a>
+              <a
+                onClick={(e) => toBlock(e.target.getAttribute("height"))}
+                height="2500"
+              >
+                Мои соцсети
               </a>
             </div>
 
@@ -207,7 +215,7 @@ const Main = () => {
                 }
               />
               <a
-                href="https://t.me/itbulgaria8"
+                href="https://www.instagram.com/waleriaqa/"
                 target="_blank"
                 className={
                   theme === "light"
@@ -256,7 +264,7 @@ const Main = () => {
                 }
               />
               <a
-                href="https://t.me/itbulgaria8"
+                href="https://www.instagram.com/waleriaqa/"
                 target="_blank"
                 className={
                   theme === "light"
@@ -308,24 +316,22 @@ const Main = () => {
       {isPortrait ? (
         <div className="welcome-block">
           <div className="first-block">
-            <h1>
-               <span className="title">Курсы без переплат —  <br /> всё по честной цене</span>
-            </h1>
-            
-          </div>
+  <h1 className="title-heading">
+    Курсы без переплат — <br />
+    <span className="title">всё по честной цене</span>
+  </h1>
+</div>
         
         </div>
       ) : (
         <div className="welcome-block mobile">
           <div className="main-image-box mobile">
-            
-            
-           
+          
           </div>
 
           <div className="first-block mobile">
             <h1>
-              Тестировщик <span className="title">Курсы без переплат —  <br /> всё по честной цене</span>
+            <span className="title">Курсы без переплат —  <br /> всё по честной цене</span>
             </h1>
             
 
@@ -367,6 +373,7 @@ const Main = () => {
     </div>
     </div>
     </div>
+    
     <div className="course-card">
       <img src="./images/js.png" alt="Краш-курс по JavaScript" onClick={() => window.open("https://www.udemy.com/course/javascript-guide-ru/?couponCode=LETSLEARNNOW", "_blank")}
     style={{ cursor: "pointer" }}/>
@@ -412,6 +419,28 @@ const Main = () => {
   </div>
 </section>
 
+<section className="about-me">
+  <div className="about-me-content">
+    <div className="about-me-text-box">
+  <h2 className="about-me-title">Обо мне</h2>
+  <p className="about-me-text">
+    Я — Waleria Stojanowska, QA Engineer с международным опытом, преподаватель и автор курсов.
+Сфера IT — моё любимое дело, которое вдохновляет и каждый день приносит радость.
+Я искренне верю, что обучение должно быть понятным, интересным и поддерживающим.
+Мне важно не просто передавать знания — я хочу помочь каждому студенту поверить в себя и с уверенностью сделать шаг в мир IT.
+  </p>
+  <button
+    className="about-me-button"
+    onClick={() => window.open("https://www.udemy.com/user/waleria-stojanowska/", "_blank")}
+  >
+    Перейти в профиль Udemy
+  </button>
+  </div>
+    <div className="about-me-photo-box">
+      <img src="./images/me.png" alt="Waleria Stojanowska" className="about-me-photo" />
+    </div>
+  </div>
+</section>
 
       
 
@@ -459,7 +488,9 @@ const Main = () => {
       </div>
 
       <div className={isPortrait ? "review-block" : "review-block mobile"}>
-        <h1 style={{ fontSize: isPortrait ? "50px" : "10vw" }}>Отзывы</h1>
+        <h1 style={{ fontSize: isPortrait ? "50px" : "10vw" }}>
+          <span className="title">Отзывы</span>
+          </h1>
         <p className={isPortrait ? "description" : "description mobile"}>
           Отзывы учащихся, написанные с их
           <span className="selecting"> личных аккаунтов</span>
@@ -502,11 +533,11 @@ const Main = () => {
       >
         <h1
           style={{
-            fontSize: isPortrait ? "52px" : "10vw",
+            fontSize: isPortrait ? "50px" : "10vw",
             paddingBottom: isPortrait ? "20px" : "0",
           }}
         >
-          ГАРАНТИИ
+          <span class="title">Гарантии</span>
         </h1>
 
         <ol
@@ -515,34 +546,38 @@ const Main = () => {
           }
         >
           <li className="point">
-            Оплату принимаю через платежную систему
-            <span style={{ color: "#4824ff" }}> Название* </span>, которая
-            контролирует <br />
-            безопасность денежных переводов.
+            Оплата через
+            <span style={{ color: "#4824ff" }}> Udemy </span>
+            контролирует безопасность денежных переводов.
           </li>
           <li className="point">
-            Убедиться в моей ответственности и профессионализме можно
-            <span style={{ color: "#4824ff" }}> написав клиентам </span>,
-            <br /> оставившим отзывы{" "}
-            <span style={{ color: "#4824ff" }}> лично </span>в любой момент
-            (отзывы клиентов выше).
+            Мой <span style={{ color: "#4824ff" }}> профессионализм </span> подтверждён опытом и {" "}
+            <span style={{ color: "#4824ff" }}> положительными отзывами </span> <br /> студентов (см. выше).
           </li>
           <li className="point">
-            Все <span style={{ color: "#4824ff" }}> авторские права </span> на
-            работу переходат заказчику после виполненија заказа.
+            Закрепите знания <span style={{ color: "#4824ff" }}> на практике </span> — в каждом курсе 
+            вас ждут упражнения и <br /> задания для применения теории.
           </li>
           <li className="point">
-            В своих работах испољзују материали строго
+            В своих работах использую материалы строго
             <span style={{ color: "#4824ff" }}>
               {" "}
-              разрешенние длја личного <br /> и коммерческого испољзованија
+              разрешенные для личного <br /> и коммерческого испољзования.
             </span>
-            .
+          </li>
+          <li className="point">
+            Поддержка на
+            <span style={{ color: "#4824ff" }}>
+              {" "}
+              всех этапах обучения </span> — я отвечаю на вопросы и <br /> 
+              помогаю разобраться с трудными темами.
           </li>
         </ol>
       </div>
 
-      <div className="footer"> © Workford</div>
+      <SocialLinks />
+
+      <div className="footer"> © 2025 - Waleria Stojanowska. Все права защищены</div>
 
       <button
         className={scroll < 1960 ? "" : isPortrait ? "btn-up" : "btn-up mobile"}
