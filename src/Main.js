@@ -7,12 +7,25 @@ import InstagramStories from "./InstagramStories";
 import Review from "./Review";
 import Theme from "./Theme";
 import ModalMenu from "./ModalMenu";
-import Resize from "./Resize";
+// import Resize from "./Resize";
 import SocialLinks from "./SocialLinks";
 import Banners from "./Banners";
 
 const Main = () => {
-  const isPortrait = Resize();
+
+
+
+  const [isPortrait, setIsPortrait] = useState(window.innerWidth > window.innerHeight);
+useEffect(() => {
+  const handleResize = () => {
+    setIsPortrait(window.innerWidth > window.innerHeight);
+  };
+  window.addEventListener("resize", handleResize);
+
+  return () => {
+    window.removeEventListener("resize", handleResize);
+  };
+}, []);
 
   const { theme, setTheme } = Theme();
   const [isDarkTheme, setIsDarkTheme] = useState(() => {
@@ -229,14 +242,14 @@ const Main = () => {
                   className={theme === "light" ? "theme light" : "theme dark"}
                   style={{
                     transform: isDarkTheme
-                      ? "translateX(38px)"
-                      : "translate(0px)",
+                      ? "translateX(34px)"
+                      : "translate(0)",
                   }}
                 ></div>
               </div>
             </div>
-          </div>
-        ) : (
+          </div> ) 
+          : (
           <div className="navigation">
             <div className="switch switch-mobile" onClick={toggleTheme}>
               <div
@@ -248,7 +261,7 @@ const Main = () => {
                 style={{
                   transform: isDarkTheme
                     ? "translateX(8.6vw)"
-                    : "translate(0px)",
+                    : "translate(0)"
                 }}
               ></div>
             </div>
@@ -283,6 +296,7 @@ const Main = () => {
           </div>
         )}
       </header>
+      
       <ModalMenu show={showModalMenu} onClose={handleCloseModalMenu}>
         <a onClick={upButton}>Обо мне</a>
         <a
@@ -419,16 +433,21 @@ const Main = () => {
   </div>
 </section>
 
-<section className="about-me">
-  <div className="about-me-content">
-    <div className="about-me-text-box">
-  <h2 className="about-me-title">Обо мне</h2>
+<section className={isPortrait ? "about-me" : "about-me mobile"}>
+  <div className={isPortrait ? "about-me-content" : "about-me-content mobile"}>
+    <div className={isPortrait ? "about-me-text-box" : "about-me-text-box mobile"}>
+  <h2 className="about-me-title" style={{
+          fontSize: isPortrait ? "36px" : "8vw",
+          textAlign: isPortrait ? "center" : "left",
+          marginBottom: isPortrait ? "20px" : "5vw"
+        }}>Обо мне</h2>
   <p className="about-me-text">
-    Я — Waleria Stojanowska, QA Engineer с международным опытом, преподаватель и автор курсов.
-Сфера IT — моё любимое дело, которое вдохновляет и каждый день приносит радость.
-Я искренне верю, что обучение должно быть понятным, интересным и поддерживающим.
+    Я — <strong>Waleria Stojanowska</strong>, QA Engineer с международным опытом, преподаватель и автор курсов. <br />
+Сфера IT — моё любимое дело, которое вдохновляет и каждый день приносит радость. <br />
+Я искренне верю, что обучение должно быть понятным, интересным и поддерживающим. <br />
 Мне важно не просто передавать знания — я хочу помочь каждому студенту поверить в себя и с уверенностью сделать шаг в мир IT.
   </p>
+  <div className="about-me-button-wrapper">
   <button
     className="about-me-button"
     onClick={() => window.open("https://www.udemy.com/user/waleria-stojanowska/", "_blank")}
@@ -436,7 +455,8 @@ const Main = () => {
     Перейти в профиль Udemy
   </button>
   </div>
-    <div className="about-me-photo-box">
+  </div>
+    <div className={isPortrait ? "about-me-photo-box" : "about-me-photo-box mobile"}>
       <img src="./images/me.png" alt="Waleria Stojanowska" className="about-me-photo" />
     </div>
   </div>
