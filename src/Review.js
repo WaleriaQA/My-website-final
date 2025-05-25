@@ -21,8 +21,7 @@ const Review = (props) => {
             </a>
           </div>
 
-          <p className={isPortrait ? "review" : "review mobile"}>
-            {props.text}
+          <p className={isPortrait ? "review" : "review mobile"}>{props.text}
           </p>
         </div>
       </div>

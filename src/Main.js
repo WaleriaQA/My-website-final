@@ -13,8 +13,6 @@ import Banners from "./Banners";
 
 const Main = () => {
 
-
-
   const [isPortrait, setIsPortrait] = useState(window.innerWidth > window.innerHeight);
 useEffect(() => {
   const handleResize = () => {
@@ -298,12 +296,12 @@ useEffect(() => {
       </header>
       
       <ModalMenu show={showModalMenu} onClose={handleCloseModalMenu}>
-        <a onClick={upButton}>Обо мне</a>
+        <a onClick={upButton}>Курсы</a>
         <a
           onClick={(e) => toBlock(e.target.getAttribute("height"))}
           height="700"
         >
-          Услуги
+          Обо мне
         </a>
         <a
           onClick={(e) => toBlock(e.target.getAttribute("height"))}
@@ -319,9 +317,15 @@ useEffect(() => {
         </a>
         <a
           onClick={(e) => toBlock(e.target.getAttribute("height"))}
-          height="2500"
+          height="5350"
         >
           Гарантии
+        </a>
+        <a
+          onClick={(e) => toBlock(e.target.getAttribute("height"))}
+          height="3000"
+        >
+          Мои соцсети
         </a>
       </ModalMenu>
 
@@ -471,6 +475,8 @@ useEffect(() => {
           <span className="title">Планируется</span>
           </h1>
           </div>
+
+          
         <div classname={isPortrait ? "" : "filter-scrollbar"}>
           <div
             style={{

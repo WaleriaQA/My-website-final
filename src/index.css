@@ -59,9 +59,6 @@ body {
   margin-right: 5%;
   margin-top: 0;
   margin-bottom: 0;
-  font-family: "Winky Rough";
-  src: url("/public/WinkyRough-VariableFont_wght.ttf");
-  src: url("/public/Prata-Regular.ttf");
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: var(--main-background);
@@ -270,6 +267,10 @@ header a:hover {
 }
 
 @media (max-width: 768px) {
+
+  body {
+    padding-right: 5vw; /* компенсируем правый сдвиг */
+  }
   header {
     width: 100%;
     padding: 0 4vw;
@@ -682,6 +683,11 @@ header a:hover {
 @media (max-width: 768px) {
   .courses-section {
     padding: 60px 20px;
+     text-align: center;
+  margin: -300px auto 60px;
+   margin-left: 3vw;
+    padding-left: 4vw;
+  padding-right: 10vw;
   }
 
   .courses-container {
@@ -694,9 +700,9 @@ header a:hover {
 
   .course-card {
     width: 190%;
-    max-width: 390px;
-    /* margin: 0 auto;
-     box-sizing: border-box; */
+    max-width: 340px;
+    margin-left: -10px;
+     box-sizing: border-box; 
   }
 
   .course-content {
@@ -744,23 +750,23 @@ header a:hover {
 /*   ---   ABOUT ME BLOCK   ---   */
 
 .about-me {
-  background-color: rgba(72, 36, 255, 0.05);
-  padding: 60px 40px;
+background-color: rgba(72, 36, 255, 0.05);
+  padding: 60px 5%; /* Matches body margins for consistency */
   border-radius: 28px;
-  max-width: 1100px;
-  margin: 0 auto 100px auto;
+  margin: 0 auto 100px; /* Centered with bottom margin */
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-  text-align: center; 
+  text-align: center;
   
 }
 
 .about-me.mobile {
     margin: 10vw auto;
-  padding: 10vw 6vw;
+  padding: 10vw 5vw;
   border-radius: 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  max-width: none; /* чтобы фон не ограничивался */
-  width: auto;
+  max-width: 100%;
+  width: calc(100vw - 10vw); /* отступы по бокам */
+  box-sizing: border-box;
+  background-color: rgba(72, 36, 255, 0.05);
   
 }
 
@@ -883,6 +889,19 @@ header a:hover {
     width: 200px;
     height: 200px;
     margin-bottom: 20px;
+  }
+
+ 
+
+.about-me-button {
+  margin: 0 auto;
+  display: inline-block;
+}
+.about-me.mobile {
+
+    margin-left: 3vw;
+    padding-left: 4vw;
+  padding-right: 10vw;
   }
 }
 
@@ -1029,7 +1048,7 @@ header a:hover {
 }
 
 .review-block.mobile {
-  height: 168vw;
+  height: 190vw;
 }
 
 .review-block h1 {
@@ -1067,12 +1086,14 @@ header a:hover {
   justify-content: center;
   margin: auto;
   width: 1260px;
+  
 }
 
 .review-carausel.mobile {
   width: 100vw;
   margin-left: -5vw;
   margin-right: -5vw;
+ 
 }
 
 .review-container {
@@ -1085,6 +1106,7 @@ header a:hover {
 .review-container.mobile {
   width: 100vw;
   margin: -8vw;
+  
 }
 
 .next-button {
@@ -1101,15 +1123,14 @@ header a:hover {
 }
 
 .next-button.mobile {
-  transform: scale(0.9);       
+  scale:0.9;       
 }
 
 .next-button .array-next-icon {
   content: url(/public/icons/array-next.png);
   width: 20px;                 /* Укажи размеры явно */
   height: 20px;
-  
-  
+  margin: auto;
 }
 
 .next-button:hover {
@@ -1147,9 +1168,9 @@ header a:hover {
 
 .review-block .review {
   margin-top: auto;
-  font-size: 19px;
-  line-height: 27px;
-  width: 90%;
+  font-size: 20px;
+  line-height: 25px;
+  width: 95%;
 }
 
 .review-block .review.mobile {
@@ -1288,6 +1309,9 @@ header a:hover {
   background-image: url(/public/icons/down.png);
 }
 
+.btn-up.mobile {
+  right: 1vw; /* вместо 5vw */
+}
 .btn-up.mobile::before {
   width: 15vw;
   height: 15vw;
