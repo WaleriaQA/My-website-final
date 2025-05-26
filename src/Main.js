@@ -332,7 +332,7 @@ useEffect(() => {
       
 
       {isPortrait ? (
-        <div className="welcome-block">
+        <div className={isPortrait ? "welcome-block" : "welcome-block mobile"}>
           <div className="first-block">
   <h1 className="title-heading">
     Курсы без переплат — <br />

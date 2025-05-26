@@ -146,10 +146,12 @@ header a:hover {
 
 .btn.mobile {
   margin-right: 0;
-  margin-top: 10vw;
+  margin-top: 5vw;
   height: 18vw;
   width: 60vw;
 }
+
+
 
 .btn:hover {
   filter: drop-shadow(0px 0px 35px pink);
@@ -682,12 +684,11 @@ header a:hover {
 
 @media (max-width: 768px) {
   .courses-section {
-    padding: 60px 20px;
-     text-align: center;
-  margin: -300px auto 60px;
-   margin-left: 3vw;
+    margin: 0 auto 60px;
+    padding-top: calc(13vh + 10px);
+    text-align: center;
     padding-left: 4vw;
-  padding-right: 10vw;
+    padding-right: 4vw;
   }
 
   .courses-container {
