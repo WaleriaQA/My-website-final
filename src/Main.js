@@ -325,7 +325,7 @@ useEffect(() => {
           onClick={(e) => toBlock(e.target.getAttribute("height"))}
           height="3000"
         >
-          Мои соцсети
+          Соцсети
         </a>
       </ModalMenu>
 
