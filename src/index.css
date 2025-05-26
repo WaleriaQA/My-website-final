@@ -319,9 +319,8 @@ header a:hover {
 }
 
 .welcome-block.mobile {
-  padding-top: 14vh;
-  height: 86vh;
-  flex-direction: column;
+  padding-top: calc(13vh + 20px); /* с учётом фиксированного header */
+    padding-bottom: 5vh;
   
 }
 
@@ -684,11 +683,11 @@ header a:hover {
 
 @media (max-width: 768px) {
   .courses-section {
-    margin: 0 auto 60px;
-    padding-top: calc(13vh + 10px);
-    text-align: center;
+     margin: 0 auto 60px;
+    padding-top: 0;
     padding-left: 4vw;
     padding-right: 4vw;
+    box-sizing: border-box;
   }
 
   .courses-container {
