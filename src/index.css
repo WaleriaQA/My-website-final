@@ -803,6 +803,11 @@ background-color: rgba(72, 36, 255, 0.05);
   
 }
 
+.about-me-title-wrapper {
+   text-align: center;
+  margin: 0 auto 20px auto;
+}
+
 .about-me-content {
   display: flex;
   flex-direction: row;
@@ -813,9 +818,10 @@ background-color: rgba(72, 36, 255, 0.05);
 }
 
 .about-me-content.mobile {
-  flex-direction: column-reverse;
+   flex-direction: column;
   align-items: center;
-  gap: 6vw;
+  text-align: center;
+  gap: 4vw; /* равномерное расстояние между всеми блоками */
 }
 
 .about-me-text-box {
@@ -824,24 +830,11 @@ background-color: rgba(72, 36, 255, 0.05);
   
 }
 
-.about-me-text-box.mobile {
-  width: 100%;
-}
-
-
 .about-me-photo-box {
   flex: 0 0 280px;
   display: flex;
   justify-content: center;
 }
-
-.about-me-photo-box.mobile {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-
 
 .about-me-photo {
   width: 260px;
@@ -849,18 +842,13 @@ background-color: rgba(72, 36, 255, 0.05);
   border-radius: 50%;
   object-fit: cover;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-.about-me-photo-box.mobile .about-me-photo {
-  width: 60vw;
-  height: 60vw;
+  
 }
 
 .about-me-title {
-  display: block;
+    display: inline-block;
   font-size: 48px;
   font-weight: bold;
-  margin: 0 20px 0 300px;
   background: linear-gradient(
     to right,
     #4824ff,
@@ -898,13 +886,22 @@ background-color: rgba(72, 36, 255, 0.05);
   border-radius: 12px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  margin: 0 auto 20px 300px; 
+  margin: 0;
+  display: inline-block;
+
 }
 
 .about-me-button:hover {
   background-color: #341bcc;
   
 }
+
+.about-me-button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
 
 @media (max-width: 768px) {
 
@@ -920,30 +917,53 @@ background-color: rgba(72, 36, 255, 0.05);
     overflow-x: hidden;
   }
   .about-me-content {
-    flex-direction: column-reverse;
+    flex-direction: column;
     align-items: center;
     text-align: center;
   }
 
+  .about-me-title-wrapper.mobile {
+    text-align: center;
+    margin: 0 0 5vw;
+  }
   .about-me-title {
-    font-size: 32px;
+    font-size: 36px;
+   margin: 0 auto 4vw auto;
+  }
+
+   .about-me-content {
+    flex-direction: column;
+    align-items: center;
     text-align: center;
   }
 
   .about-me-photo {
-    width: 200px;
-    height: 200px;
-    margin-bottom: 20px;
+    margin: 0;
   }
 
- 
+ .about-me-photo-box {
+  order: 1;
+ margin: 0;
+}
+
+.about-me-text-box {
+  order: 2;
+  margin: 0;
+}
+.about-me-text {
+   margin: 0;
+  padding-bottom: 20px;
+}
 
 .about-me-button {
   margin: 0 auto;
-  display: inline-block;
+
 }
+.about-me-button-wrapper {
+    order: 3;
+  } 
 .about-me.mobile {
-margin: 10vw auto;
+
   padding: 10vw 5vw;
   border-radius: 20px;
   width: 100%;
