@@ -12,8 +12,8 @@ const Review = (props) => {
               display: "flex",
               placeItems: "center",
               justifyContent: "space-between",
-            }}
-          >
+            }}>
+              
             <h2 style={{ fontSize: isPortrait ? "" : "7vw" }}>{props.name}</h2>
             <a className="link" href={props.link} target="_blank">
               

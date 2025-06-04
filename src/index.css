@@ -797,7 +797,7 @@ header a:hover {
 background-color: rgba(72, 36, 255, 0.05);
   padding: 60px 5%; /* Matches body margins for consistency */
   border-radius: 28px;
-  margin: 0 auto 100px; /* Centered with bottom margin */
+  margin: 0 auto 80px; /* Centered with bottom margin */
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
   text-align: center;
   
@@ -970,6 +970,8 @@ background-color: rgba(72, 36, 255, 0.05);
 /*   ---   PORTFOLIO BLOCK   ---   */
 .portfolio-block {
   height: auto;
+   
+  
 }
 
 .portfolio-block .first-block {
@@ -977,6 +979,7 @@ background-color: rgba(72, 36, 255, 0.05);
   flex-direction: column; /* ← размещение по вертикали */
   align-items: center;     /* ← выравнивание по центру */
   position: relative;
+  margin-top: 60px; 
 }
 
 .portfolio-block .first-block.mobile {
@@ -1091,11 +1094,10 @@ background-color: rgba(72, 36, 255, 0.05);
 /*   ---   REVIEW BLOCK   ---   */
 
 .review-block {
-  margin: 80px 0px;
+  margin: 80px 0;
   height: 770px;
   background: rgba(72, 36, 255, 0.30);
   border-radius: 28px;
-  
   
 }
 
@@ -1136,9 +1138,12 @@ background-color: rgba(72, 36, 255, 0.05);
 .review-carausel {
   display: flex;
   justify-content: center;
-  margin: auto;
-  width: 1260px;
-  
+  margin: 0 auto;
+  max-width: 1320px;
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+ 
 }
 
 .review-carausel.mobile {
@@ -1149,10 +1154,12 @@ background-color: rgba(72, 36, 255, 0.05);
 }
 
 .review-container {
-  display: flex;
-  overflow-x: scroll;
+   display: flex;
+  gap: 24px;
+  overflow-x: hidden;
+  padding-bottom: 10px;
   scroll-behavior: smooth;
-  overflow: hidden;
+  
 }
 
 .review-container.mobile {
@@ -1183,6 +1190,7 @@ background-color: rgba(72, 36, 255, 0.05);
   width: 20px;                 /* Укажи размеры явно */
   height: 20px;
   margin: auto;
+ 
 }
 
 .next-button:hover {
@@ -1194,7 +1202,9 @@ background-color: rgba(72, 36, 255, 0.05);
 }
 
 .review-card {
-  min-width: 420px;
+  flex: 0 0 calc((100% - 48px) / 3); 
+  max-width: 420px;
+  min-width: 0; 
   margin-bottom: 20px;
 }
 
@@ -1203,7 +1213,7 @@ background-color: rgba(72, 36, 255, 0.05);
 }
 
 .review-content {
-  height: 385px;
+ height: 385px;
   width: 384px;
   background: white;
   color: black;
@@ -1264,7 +1274,7 @@ background-color: rgba(72, 36, 255, 0.05);
 .guarantees-block {
   height: 540px;
   font-size: 22px;
-  /* text-align: center;  */
+
 }
 
 .guarantees-block h1 {

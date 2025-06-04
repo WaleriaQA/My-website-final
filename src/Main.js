@@ -12,6 +12,7 @@ import SocialLinks from "./SocialLinks";
 import Banners from "./Banners";
 
 const Main = () => {
+  // const isPortrait = Resize();
 
   const [isPortrait, setIsPortrait] = useState(window.innerWidth > window.innerHeight);
 useEffect(() => {
@@ -99,9 +100,7 @@ useEffect(() => {
       key={2}
       name="Oleh V."
       link="https://www.udemy.com/course/cypress-guide-ru/?couponCode=LETSLEARNNOW#reviews"
-      text="Курс понравился.
-
-Отлично подойдет для совсем новичков Cypress, рассказывается все на очень простом уровне. По идее, даже с нулевыми знаниями в JS и автотестах - можно научиться делать такие же тесты, хотя для полноценной работы это только первый шаг."
+      text="Курс понравился. Отлично подойдет для совсем новичков Cypress, рассказывается все на очень простом уровне. По идее, даже с нулевыми знаниями в JS и автотестах - можно научиться делать такие же тесты, хотя для полноценной работы это только первый шаг."
     />,
     <Review
       key={3}
@@ -131,14 +130,14 @@ useEffect(() => {
   };
 
   const btnPrevReview = () => {
-    const box = containerRef.current;
-    box.scrollLeft -= reviewWidthRef.current;
-  };
+   const box = containerRef.current;
+   box.scrollLeft -= reviewWidthRef.current;
+};
 
   const btnNextReview = () => {
     const box = containerRef.current;
-    box.scrollLeft += reviewWidthRef.current;
-  };
+   box.scrollLeft += reviewWidthRef.current;
+};
 
   useEffect(() => {
     const box = containerRef.current;
@@ -539,8 +538,10 @@ useEffect(() => {
             ref={containerRef}
           >
             {reviews.slice(-visibleReviews)}
-            {reviews}
-            {reviews.slice(0, visibleReviews)}
+{reviews}
+{reviews.slice(0, visibleReviews)}
+
+
           </div>
         </div>
 
