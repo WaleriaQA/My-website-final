@@ -479,7 +479,7 @@ useEffect(() => {
           </div>
 
           
-        <div classname={isPortrait ? "" : "filter-scrollbar"}>
+        <div className={isPortrait ? "" : "filter-scrollbar"}>
           <div
             style={{
               display: "flex",
@@ -528,33 +528,21 @@ useEffect(() => {
            <br /> лично у автора отзыва.
         </p>
 
-        <div
-          className={isPortrait ? "review-carausel" : "review-carausel mobile"}
-        >
-          <div
-            className={
-              isPortrait ? "review-container" : "review-container mobile"
-            }
-            ref={containerRef}
-          >
+        <div className={isPortrait ? "review-carausel" : "review-carausel mobile"}>
+          <div className={isPortrait ? "review-container" : "review-container mobile"}
+            ref={containerRef}>
             {reviews.slice(-visibleReviews)}
-{reviews}
-{reviews.slice(0, visibleReviews)}
-
-
+            {reviews}
+            {reviews.slice(0, visibleReviews)}
           </div>
         </div>
 
         <div style={{ display: "flex", justifyContent: "center" }}>
-          <p
-            className={isPortrait ? "next-button" : "next-button mobile"}
-            style={{ transform: "rotate(180deg)" }}
-          >
-            <p className="array-next-icon" onClick={btnPrevReview} />
-          </p>
+          <p className={isPortrait ? "next-button" : "next-button mobile"}
+            style={{ transform: "rotate(180deg)" }}>
+            <p className="array-next-icon" onClick={btnPrevReview}/></p>
           <p className={isPortrait ? "next-button" : "next-button mobile"}>
-            <p className="array-next-icon" onClick={btnNextReview} />
-          </p>
+            <p className="array-next-icon" onClick={btnNextReview}/></p>
         </div>
       </div>
 
