@@ -300,31 +300,31 @@ useEffect(() => {
         <a onClick={upButton}>Курсы</a>
         <a
           onClick={(e) => toBlock(e.target.getAttribute("height"))}
-          height="700"
+          height="2500"
         >
           Обо мне
         </a>
         <a
           onClick={(e) => toBlock(e.target.getAttribute("height"))}
-          height="1230"
+          height="3500"
         >
           Планируется
         </a>
         <a
           onClick={(e) => toBlock(e.target.getAttribute("height"))}
-          height="1920"
+          height="4000"
         >
           Отзывы
         </a>
         <a
           onClick={(e) => toBlock(e.target.getAttribute("height"))}
-          height="5350"
+          height="5000"
         >
           Гарантии
         </a>
         <a
           onClick={(e) => toBlock(e.target.getAttribute("height"))}
-          height="3000"
+          height="6200"
         >
           Соцсети
         </a>
