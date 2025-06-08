@@ -1439,13 +1439,17 @@ background-color: rgba(72, 36, 255, 0.05);
   .review-card {
     min-width: 100vw;
      max-width: 95%;
-      padding: auto;
+     /* padding: 5vw; 
+  box-sizing: border-box;
+  background: white;
+  border-radius: 8px; */
+ 
   }
 
   .review-content {
     scale: 0.9;
     width: 90vw;
-    height: 116vw;
+    height: auto;
     margin: 5vw;
   }
 
