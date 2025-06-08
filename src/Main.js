@@ -153,6 +153,8 @@ useEffect(() => {
     };
   }, []);
 
+
+
   const [scroll, setScroll] = useState(0);
 
   const scrollUp = () => {
@@ -288,7 +290,7 @@ useEffect(() => {
                 className={
                   theme === "light" ? "icon-menu light" : "icon-menu dark"
                 }
-              />
+              /> 
             </div>
           </div>
         )}

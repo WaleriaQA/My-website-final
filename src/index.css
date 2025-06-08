@@ -1198,7 +1198,7 @@ background-color: rgba(72, 36, 255, 0.05);
   cursor: pointer;
   border: 2px solid black;
   transition: 0.5s ease-in-out;
-  justify-content: flex-end; /* выравнивает стрелку вправо */
+  justify-content: flex-end; 
   align-items: center;
 }
 
@@ -1348,7 +1348,7 @@ background-color: rgba(72, 36, 255, 0.05);
 
 @media screen and (max-width: 1366px) {
   .review-carausel {
-    padding: 0 24px;
+    padding: 0 25px;
     box-sizing: border-box;
   }
 
@@ -1461,14 +1461,12 @@ background-color: rgba(72, 36, 255, 0.05);
   }
   .next-button {
     position: relative;
-    top: 12px; /* сместить вниз */
+    top: 12px; 
     margin: 16px auto 0 auto;
     display: flex;
     justify-content: center;
   }
 }
-
-
 
 /*   ---   GUARANTEES BLOCK   ---   */
 
