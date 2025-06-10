@@ -10,10 +10,6 @@
   width: 4px;
 }
 
-/* *::-webkit-scrollbar-thumb {
-  background-color: #4824ff;
-} */
-
 *::-webkit-scrollbar-track {
   background-color: #ffffff01;
 }
@@ -78,10 +74,8 @@ code {
 header {
   margin-left: -5vw;
   margin-right: -5vw;
-   /* margin-bottom: 0; */
   position:fixed;
   width: 100%;
-  /* max-width: 100vw; */
   padding: 0 5vw 0 5vw;
   background: var(--header-background);
   backdrop-filter: blur(8px);
@@ -94,14 +88,12 @@ header {
   justify-content: space-between;
   align-items: center;
   height: 13vh;
- 
 }
 
 .menu {
   height: 100px;
   width: 50vw;
   align-content: center;
-
 }
 
 header a {
@@ -124,11 +116,7 @@ header a:hover {
 
 .header-buttons-mobile {
   display: flex;
-  /* justify-content: flex-end;
-  align-items: center; */
   gap: 5vw;
-  /* width: 100%;
-  padding-right: 2vw; */
 }
 
 .btn {
@@ -154,8 +142,6 @@ header a:hover {
   height: 18vw;
   width: 60vw;
 }
-
-
 
 .btn:hover {
   filter: drop-shadow(0px 0px 35px pink);
@@ -326,8 +312,6 @@ header a:hover {
   }
 }
 
-
-
 /*   ---   WELCOME BLOCK   ---   */
 
 .welcome-block {
@@ -342,9 +326,8 @@ header a:hover {
 }
 
 .welcome-block.mobile {
-  padding-top: calc(13vh + 20px); /* с учётом фиксированного header */
+  padding-top: calc(13vh + 20px); 
     padding-bottom: 5vh;
-  
 }
 
 .welcome-block h1 {
@@ -391,19 +374,15 @@ header a:hover {
   -webkit-text-fill-color: transparent;
   background-size: 200%;
   animation: gradientAnimation 5s linear infinite;
- 
 }
 
 .welcome-block .first-block {
   align-content: center;
-  /* width: 55%; */
-}
-.welcome-block .first-block.mobile {
-  text-align: center;
-  /* width: 100%; */
-  
 }
 
+.welcome-block .first-block.mobile {
+  text-align: center;
+}
 
 .title-heading {
   font-size: 48px;
@@ -426,7 +405,6 @@ header a:hover {
   line-height: 1.2;
   max-width: 90%;
   margin: 0 auto;
- 
 }
 
 @media (max-width: 1024px) {
@@ -440,8 +418,6 @@ header a:hover {
   }
 }
 
-
-
 @keyframes gradientAnimation {
   0% {
     background-position: 200% 50%;
@@ -451,18 +427,7 @@ header a:hover {
   }
 }
 
-/* .welcome-block {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 80vh; 
-  padding-top: 150px;
-  text-align: center;
-} */
-
 .first-block {
-  /* max-width: 900px;
-  padding: 0 20px; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -475,24 +440,22 @@ header a:hover {
   margin-bottom: 0; 
 }
 
-
-
 @media (max-width: 768px) {
 
       header {
-    padding: 0 20px; /* выравниваем по карточкам */
+    padding: 0 20px; 
     width: 100%;
-    margin: 0; /* убираем отрицательные отступы */
+    margin: 0; 
     box-sizing: border-box;
   }
 
   .header-buttons-mobile {
-    justify-content: flex-end; /* прижимаем иконки вправо */
+    justify-content: flex-end; 
     padding-right: 0;
   }
 
   .title {
-    font-size: 36px; /* Размер текста заголовка для мобильных */
+    font-size: 36px; 
   }
 }
 
@@ -505,19 +468,9 @@ header a:hover {
   margin: 0 5vw 0 5vw;
 }
 
-
-
 .main-image-box img:hover {
   animation: shakeUpDown 0.6s ease-in-out infinite;
 }
-
-/* @keyframes shakeUpDown  {
-  0% { transform: translateY(0); }
-  25% { transform: translateY(-5px); }
-  50% { transform: translateY(5px); }
-  75% { transform: translateY(-5px); }
-  100% { transform: translateY(0); }
-} */
 
 @keyframes bouncing {
   0% {
@@ -555,19 +508,13 @@ header a:hover {
   box-sizing: border-box;
 }
 
-
 .courses-container {
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
   justify-content: center;
-  /* align-items: stretch; */
   padding: 0;
   box-sizing: border-box;
-  
-
-  
-  
 }
 
 .course-card {
@@ -582,7 +529,6 @@ header a:hover {
   overflow: hidden;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   justify-content: space-between;
-  
 }
 
 .course-card:hover {
@@ -605,7 +551,7 @@ header a:hover {
 }
 
 .course-card a {
-  margin-top: auto; /* это прижимает кнопку вниз */
+  margin-top: auto; 
   align-self: flex-start;
   background-color: #4824ff;
   color: white;
@@ -626,8 +572,6 @@ header a:hover {
   gap: 20px;
   margin-top: 25px;
   margin-bottom: 8px;
-  
- 
 }
 
 .avatar {
@@ -666,7 +610,6 @@ header a:hover {
   padding-left: 11px;
  
 }
-
 
 .course-card .course-description {
   font-size: 20px;
@@ -719,7 +662,6 @@ header a:hover {
     overflow-x: hidden;
   }
 
-  
   .courses-section {
     margin: 10vw auto;
     padding: 10vw 5vw;
@@ -729,8 +671,7 @@ header a:hover {
     box-sizing: border-box;
     overflow: hidden; 
   }
-   
-
+  
   .courses-container {
      display: flex;
     flex-direction: column;
@@ -741,7 +682,6 @@ header a:hover {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    
   }
 
   .course-card {
@@ -749,7 +689,6 @@ header a:hover {
     max-width: 360px;
     margin: 0 auto;
     box-sizing: border-box;
-     
   }
 
   .course-content {
@@ -774,7 +713,6 @@ header a:hover {
   .author-title {
     text-align: center;
     font-size: 14px;
-    
   }
 
   .course-button-wrapper {
@@ -792,19 +730,15 @@ header a:hover {
   }
 }
 
-
-
-
 /*   ---   ABOUT ME BLOCK   ---   */
 
 .about-me {
 background-color: rgba(72, 36, 255, 0.05);
-  padding: 60px 5%; /* Matches body margins for consistency */
+  padding: 60px 5%; 
   border-radius: 28px;
-  margin: 0 auto 80px; /* Centered with bottom margin */
+  margin: 0 auto 80px; 
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
   text-align: center;
-  
 }
 
 .about-me-title-wrapper {
@@ -816,7 +750,7 @@ background-color: rgba(72, 36, 255, 0.05);
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center; /* центрируем строку */
+  justify-content: center; 
   gap: 40px;
   flex-wrap: wrap;
   text-align: left;
@@ -845,7 +779,6 @@ background-color: rgba(72, 36, 255, 0.05);
   border-radius: 50%;
   object-fit: cover;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  
 }
 
 .about-me-title {
@@ -868,16 +801,13 @@ background-color: rgba(72, 36, 255, 0.05);
   -webkit-text-fill-color: transparent;
   background-size: 200%;
   animation: gradientAnimation 5s linear infinite;
-
 }
 
 .about-me-text {
- 
   font-size: 22px;
   margin-bottom: 30px;
   line-height: 1.6;
   text-align: left;
-
 }
 
 .about-me-button {
@@ -891,12 +821,10 @@ background-color: rgba(72, 36, 255, 0.05);
   transition: background-color 0.3s ease;
   margin: 0;
   display: inline-block;
-
 }
 
 .about-me-button:hover {
   background-color: #341bcc;
-  
 }
 
 .about-me-button-wrapper {
@@ -906,9 +834,7 @@ background-color: rgba(72, 36, 255, 0.05);
   width: 100%;
 }
 
-
 @media (max-width: 768px) {
-
   body {
     margin: 0;
     padding: 0;
@@ -948,6 +874,7 @@ background-color: rgba(72, 36, 255, 0.05);
   order: 2;
   margin: 0;
 }
+
 .about-me-text {
    margin: 0;
   padding-bottom: 20px;
@@ -960,8 +887,8 @@ background-color: rgba(72, 36, 255, 0.05);
 .about-me-button-wrapper {
     order: 3;
   } 
-.about-me.mobile {
 
+.about-me.mobile {
   padding: 10vw 5vw;
   border-radius: 20px;
   width: 100%;
@@ -974,14 +901,12 @@ background-color: rgba(72, 36, 255, 0.05);
 /*   ---   PORTFOLIO BLOCK   ---   */
 .portfolio-block {
   height: auto;
-   
-  
 }
 
 .portfolio-block .first-block {
   display: flex;
-  flex-direction: column; /* ← размещение по вертикали */
-  align-items: center;     /* ← выравнивание по центру */
+  flex-direction: column; 
+  align-items: center;     
   position: relative;
   margin-top: 60px; 
 }
@@ -1001,7 +926,6 @@ background-color: rgba(72, 36, 255, 0.05);
   justify-content: center;
   width: 100%;
 }
-
 
 .portfolio-block .main-title.mobile {
   font-size: 28px;
@@ -1085,7 +1009,6 @@ background-color: rgba(72, 36, 255, 0.05);
   margin-right: -5vw;
   padding-left: 5vw;
   display: flex;
-  /* overflow-x: auto; */
   scroll-behavior: smooth;
   white-space: nowrap;
   -webkit-overflow-scrolling: touch;
@@ -1369,7 +1292,6 @@ background-color: rgba(72, 36, 255, 0.05);
   }
 }
 
-
 /* Адаптивность: планшеты */
 @media screen and (max-width: 1200px) and (min-width: 768px) {
   .review-block {
@@ -1416,7 +1338,7 @@ background-color: rgba(72, 36, 255, 0.05);
 /* Адаптивность: телефоны */
 @media screen and (max-width: 768px) {
   .review-block {
-     height: auto; /* fix: позволяет блоку расти вместе с отзывами */
+     height: auto; 
     padding-bottom: 10vw;
   }
 
@@ -1440,15 +1362,9 @@ background-color: rgba(72, 36, 255, 0.05);
   .review-card {
      width: 100vw;
     max-width: 100vw;
-     /* padding: 5vw; 
-  box-sizing: border-box;
-  background: white;
-  border-radius: 8px; */
- 
   }
 
   .review-content {
-    /* scale: 0.9; */
     width: 90vw;
     height: auto;
     margin: 5vw auto;
@@ -1460,8 +1376,7 @@ background-color: rgba(72, 36, 255, 0.05);
   }
 
   .next-button {
-    /* scale: 0.9; */
-    position: static; /* fix: не вылезает из родителя */
+    position: static; 
   display: block;
   margin: 2vw auto 0 auto;
   }
@@ -1469,6 +1384,7 @@ background-color: rgba(72, 36, 255, 0.05);
   .review-title {
     font-size: 7vw;
   }
+
   .next-button {
     position: relative;
     top: 12px; 
@@ -1483,7 +1399,6 @@ background-color: rgba(72, 36, 255, 0.05);
 .guarantees-block {
   height: 540px;
   font-size: 22px;
-
 }
 
 .guarantees-block h1 {
@@ -1584,7 +1499,7 @@ background-color: rgba(72, 36, 255, 0.05);
   position: fixed;
   right: 2vw;
   bottom: 6vw;
-  z-index: 999; /* поверх всего */
+  z-index: 999; 
   pointer-events: auto;
   display: flex;
   align-items: center;
@@ -1598,6 +1513,7 @@ background-color: rgba(72, 36, 255, 0.05);
   box-sizing: content-box;
   overflow: hidden;
 }
+
 .btn-up.mobile::before {
   content: "";
   display: block;
@@ -1609,7 +1525,6 @@ background-color: rgba(72, 36, 255, 0.05);
   background-position: center;
 }
 
-/*eto moj kod,ego net w kurse*/
 @media (max-width: 768px) {
   .menu {
     display: none;

@@ -20,7 +20,7 @@
   color: transparent;
   background-size: 200%;
   animation: gradientAnimation 5s linear infinite;
-  font-size: 50px; 
+  font-size: 48px; 
 }
 
 .social-icons {
@@ -52,3 +52,7 @@
   transform: scale(1.1);
 }
 
+@media (max-width: 1024px) {
+  .social-title {
+    font-size: 36px;
+  } }
