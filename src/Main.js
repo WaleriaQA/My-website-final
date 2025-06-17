@@ -388,7 +388,7 @@ useEffect(() => {
         Освоение Cypress для эффективной автоматизации тестирования веб-приложений.
         </p>
         <div className="course-button-wrapper">
-      <a href="https://www.udemy.com/course/cypress-guide-ru/?couponCode=LETSLEARNNOW" target="_blank" rel="noopener noreferrer">Смотреть курс</a>
+      <a href="https://www.udemy.com/course/cypress-guide-ru/?couponCode=5D889CCCC18D8637734D" target="_blank" rel="noopener noreferrer">Смотреть курс</a>
     </div>
     </div>
     </div>
@@ -411,7 +411,7 @@ useEffect(() => {
       <p className="course-description">JavaScript - Освойте основы за 5 часов.</p>
       
     <div className="course-button-wrapper">
-      <a href="https://www.udemy.com/course/javascript-guide-ru/?couponCode=LETSLEARNNOW" target="_blank" rel="noopener noreferrer">Смотреть курс</a>
+      <a href="https://www.udemy.com/course/javascript-guide-ru/?couponCode=FD568C6C82AC46C84324" target="_blank" rel="noopener noreferrer">Смотреть курс</a>
     </div>
     </div>
     </div>
@@ -431,7 +431,7 @@ useEffect(() => {
 </div>
       <p className="course-description">Более 700 вопросов с реальных собеседований для освоения теории тестирования и успешного прохождения интервью.</p>
       <div className="course-button-wrapper">
-      <a href="https://www.udemy.com/course/qa-interview-questions/?couponCode=LETSLEARNNOW" target="_blank" rel="noopener noreferrer">Смотреть курс</a>
+      <a href="https://www.udemy.com/course/qa-interview-questions/?couponCode=914AF9D59E10770E083C" target="_blank" rel="noopener noreferrer">Смотреть курс</a>
     </div>
     </div>
     </div>
