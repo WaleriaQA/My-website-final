@@ -1060,6 +1060,7 @@ header a:hover {
 .next-button {
   width: 55px;
   height: 55px;
+
   border-radius: 50%;
   background: white;
   cursor: pointer;
@@ -1074,6 +1075,7 @@ header a:hover {
 
   display: flex;
   align-items: center;
+
   justify-content: center;
 }
 .next-button:focus,
@@ -1152,82 +1154,6 @@ header a:hover {
   font-size: 2rem;
 }
 
-.review-block {
-  margin: 80px 0;
-  height: 770px;
-  background: rgba(72, 36, 255, 0.3);
-  border-radius: 28px;
-}
-
-.review-block h1 {
-  color: white;
-  text-align: center;
-  padding-top: 36px;
-}
-
-.review-block .description {
-  color: white;
-  text-align: center;
-  margin-top: -12px;
-  font-size: 22px;
-  line-height: 32px;
-}
-
-.review-block .selecting {
-  background: white;
-  color: black;
-  margin: 0px 8px;
-  font-weight: 500;
-}
-
-.review-carausel {
-  display: flex;
-  justify-content: center;
-  margin: auto;
-  max-width: 1260px;
-}
-
-.review-container {
-  display: flex;
-  overflow-x: scroll;
-  scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
-  overflow: hidden;
-  gap: 16px;
-  padding: 0 40px 10px;
-}
-
-.next-button {
-  width: 55px;
-  height: 55px;
-  border-radius: 50%;
-  background: white;
-  cursor: pointer;
-  transition: 0.7s;
-  align-content: center;
-  margin: 16px 0 0 10px;
-}
-
-.next-button .array-next-icon {
-  content: url(/public/icons/array-next.png);
-  width: 20px;
-  height: 20px;
-  margin: auto;
-}
-
-.next-button:hover {
-  background: #00000050;
-}
-
-.next-button:hover .array-next-icon {
-  filter: invert(100%);
-}
-
-.review-card {
-  max-width: 400px;
-  scroll-snap-align: start;
-}
-
 .review-content {
   height: 400px;
   width: 384px;
@@ -1235,46 +1161,6 @@ header a:hover {
   color: black;
   border-radius: 24px;
   margin: 0 18px;
-}
-
-.review-block .review {
-  margin-top: auto;
-  font-size: 20px;
-  line-height: 25px;
-  width: 95%;
-}
-
-.review-block .link {
-  display: flex;
-  position: right;
-  height: 40px;
-  width: 85px;
-  background: black;
-  border-radius: 24px;
-  cursor: pointer;
-  border: 2px solid black;
-  transition: 0.5s ease-in-out;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-.review-block .link:hover {
-  border: 2px double #4824ff;
-  filter: drop-shadow(0px 0px 25px #4824ff90);
-}
-
-.review-block .array-corner-icon {
-  margin: -6px -7px;
-  padding: 0;
-  position: relative;
-  content: url(/public/icons/right-corner.png);
-  background: none;
-  scale: 0.5;
-  height: 50px;
-}
-
-.review-title {
-  font-size: 2rem;
 }
 
 @media screen and (max-width: 1366px) {
