@@ -1064,8 +1064,22 @@ header a:hover {
   background: white;
   cursor: pointer;
   transition: 0.7s;
-  align-content: center;
-  margin: 16px 0 0 10px;
+
+  /* ВАЖНО — сброс кнопки */
+  border: none;
+  outline: none;
+  box-shadow: none;
+  appearance: none;
+  -webkit-appearance: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.next-button:focus,
+.next-button:focus-visible {
+  outline: none;
+  box-shadow: none;
 }
 
 .next-button .array-next-icon {
@@ -1089,7 +1103,8 @@ header a:hover {
 }
 
 .review-content {
-  height: 400px;
+  min-height: 400px;
+  height: auto;
   width: 384px;
   background: white;
   color: black;
