@@ -1203,7 +1203,7 @@ header a:hover {
 /*   ---   GUARANTEES BLOCK   ---   */
 
 .guarantees-block {
-  height: 540px;
+  min-height: 540px;
   font-size: 22px;
 }
 
@@ -1212,7 +1212,7 @@ header a:hover {
 }
 
 .guarantees-block.mobile {
-  height: 240vw;
+  padding-bottom: 40px;
   font-size: 6vw;
 }
 
@@ -1249,6 +1249,21 @@ header a:hover {
 
 .point {
   margin-top: 35px;
+}
+/* Убираем min-height для планшетов */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .guarantees-block {
+    min-height: unset; /* убираем фиксированную высоту */
+    padding-bottom: 100px; /* добавляем «воздух» под контент */
+  }
+
+  .guarantees-block h1 {
+    margin-bottom: 40px; /* увеличиваем пространство между заголовком и списком */
+  }
+
+  .guarantees-points li {
+    margin-bottom: 30px; /* увеличиваем отступ между пунктами списка */
+  }
 }
 
 /*   ---   FOOTER BLOCK   ---   */

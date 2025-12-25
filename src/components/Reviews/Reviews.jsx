@@ -1,114 +1,100 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef } from "react";
 import Review from "../../Review";
 
 const Reviews = ({ isPortrait }) => {
   const containerRef = useRef(null);
-  const reviewWidthRef = useRef(0);
-
-  const visibleReviews = 3;
 
   const reviews = [
     <Review
       key={1}
       name="Milen Y."
       link="https://www.udemy.com/course/cypress-guide-ru/?couponCode=LETSLEARNNOW#reviews"
-      text="Очень качественный курс..."
+      text="Очень качественный курс для начинающих, рекомендую пройти, даже если вы уже знакомы с Cypress, здесь вы точно узнаете что-то новое для себя. Информации много и вся она очень детально объяснена."
     />,
     <Review
       key={2}
-      name="Oleh V."
+      name="Evgueni A."
       link="https://www.udemy.com/course/cypress-guide-ru/?couponCode=LETSLEARNNOW#reviews"
-      text="Курс понравился..."
+      text="Исчерпывающий и понятный курс для начинающих. Он представляет ясное введение в инструмент Cypress, позволяя студентам быстро освоить основы автоматизации тестирования."
     />,
     <Review
       key={3}
       name="Elina P."
       link="https://www.udemy.com/course/cypress-guide-ru/?couponCode=LETSLEARNNOW#reviews"
-      text="Прошла курс..."
+      text="Прошла курс. Он прекрасно подходит для тех, кто только начинает знакомиться с автоматизацией тестирования. Практические задания помогают закрепить знания."
+    />,
+    <Review
+      key={4}
+      name="Alla M."
+      link="https://www.udemy.com/course/cypress-guide-ru/?couponCode=LETSLEARNNOW#reviews"
+      text="В принципе для новичков курс подходит.
+
+Единественное - хотелось бы чуть большей глубины что ли, некоторые темы прям совсем по верхушкам, но с другой стороны курс и не позиционируется, как полный.
+
+Некоторые задания из блока 9 не применимы, т.к. сайты, данные в ресурсах не доступны.
+
+В целом мне понравилось, спасибо!"
+    />,
+    <Review
+      key={5}
+      name="Ksenia"
+      link="https://www.udemy.com/course/cypress-guide-ru/?couponCode=LETSLEARNNOW#reviews"
+      text="классный лайфхак по селекторам сразу из сайпреса!"
+    />,
+    <Review
+      key={6}
+      name="Nadezhda G."
+      link="https://www.udemy.com/course/javascript-guide-ru/learn/lecture/42960874#reviews"
+      text="Как первый шаг в изучении JS очень рекомендую этот курс. Вся база подробно объяснена в понятной форме."
     />,
   ];
 
-  const handleScroll = () => {
+  const scrollByCard = (direction) => {
     const box = containerRef.current;
-    const width = reviewWidthRef.current * visibleReviews;
+    const card = box.querySelector(".review-card");
+    if (!box || !card) return;
 
-    if (box.scrollLeft <= 0) {
-      box.style.scrollBehavior = "auto";
-      box.scrollLeft = box.scrollWidth - 2 * width;
-      box.style.scrollBehavior = "smooth";
-    }
+    const gap = 16;
 
-    if (box.scrollLeft >= box.scrollWidth - width) {
-      box.style.scrollBehavior = "auto";
-      box.scrollLeft = width;
-      box.style.scrollBehavior = "smooth";
-    }
+    box.scrollBy({
+      left: direction * (card.offsetWidth + gap),
+      behavior: "smooth",
+    });
   };
-
-  const btnPrevReview = () => {
-    containerRef.current.scrollLeft -= reviewWidthRef.current;
-  };
-
-  const btnNextReview = () => {
-    containerRef.current.scrollLeft += reviewWidthRef.current;
-  };
-
-  useEffect(() => {
-    const box = containerRef.current;
-    const firstReview = box.querySelector(".review-card");
-
-    if (!firstReview) return;
-
-    reviewWidthRef.current = firstReview.clientWidth;
-    const width = reviewWidthRef.current * visibleReviews;
-
-    box.scrollLeft = (box.scrollWidth - width) / 2;
-    box.addEventListener("scroll", handleScroll);
-
-    return () => box.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
     <div className={isPortrait ? "review-block" : "review-block mobile"}>
       <h1 style={{ fontSize: isPortrait ? "50px" : "10vw" }}>
         <span className="title">Отзывы</span>
       </h1>
+
       <p className={isPortrait ? "description" : "description mobile"}>
         Отзывы учащихся, написанные с их
         <span className="selecting"> личных аккаунтов</span>
-        Udemy. Все прозрачно! <br /> Любой отзыв можно{" "}
-        <span className="selecting"> открыть</span> на Udemy и{" "}
-        <span className="selecting"> спросить</span> о впечатлениях от моих
-        курсов
-        <br /> лично у автора отзыва.
+        Udemy. Все прозрачно!
       </p>
 
-      <div
-        className={isPortrait ? "review-carausel" : "review-carausel mobile"}
-      >
-        <div
-          className={
-            isPortrait ? "review-container" : "review-container mobile"
-          }
-          ref={containerRef}
-        >
-          {reviews.slice(-visibleReviews)}
+      <div className="review-carausel">
+        <div className="review-container" ref={containerRef}>
           {reviews}
-          {reviews.slice(0, visibleReviews)}
         </div>
       </div>
 
-      <div style={{ display: "flex", justifyContent: "center" }}>
-        <p
-          className={isPortrait ? "next-button" : "next-button mobile"}
-          style={{ transform: "rotate(180deg)" }}
-        >
-          <p className="array-next-icon" onClick={btnPrevReview} />
-        </p>
-        <p className={isPortrait ? "next-button" : "next-button mobile"}>
-          <p className="array-next-icon" onClick={btnNextReview} />
-        </p>
-      </div>
+      {isPortrait && (
+        <div style={{ display: "flex", justifyContent: "center", gap: "12px" }}>
+          <button
+            className="next-button"
+            style={{ transform: "rotate(180deg)" }}
+            onClick={() => scrollByCard(-1)}
+          >
+            <span className="array-next-icon" />
+          </button>
+
+          <button className="next-button" onClick={() => scrollByCard(1)}>
+            <span className="array-next-icon" />
+          </button>
+        </div>
+      )}
     </div>
   );
 };

@@ -1,8 +1,8 @@
 .social-section {
   background-color: #f9f9ff;
   text-align: center;
-  padding: 1px 20px;
-   border-radius: 28px;
+  padding: 40px 20px;
+  border-radius: 28px;
 }
 
 .social-title {
@@ -20,7 +20,7 @@
   color: transparent;
   background-size: 200%;
   animation: gradientAnimation 5s linear infinite;
-  font-size: 48px; 
+  font-size: 48px;
 }
 
 .social-icons {
@@ -31,10 +31,10 @@
 }
 
 .social-icons img {
-    width: 150px; 
+  width: 150px;
   height: 150px;
   transition: transform 0.3s ease;
-  object-fit: contain;  /* сохранить пропорции и вписать */
+  object-fit: contain; /* сохранить пропорции и вписать */
   margin: 0 10px;
 }
 
@@ -45,7 +45,6 @@
 .social-icons img[alt="Telegram"] {
   scale: 0.4;
   margin-left: -50px;
-
 }
 
 .social-icons img:hover {
@@ -55,4 +54,12 @@
 @media (max-width: 1024px) {
   .social-title {
     font-size: 36px;
-  } }
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  .social-section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}
