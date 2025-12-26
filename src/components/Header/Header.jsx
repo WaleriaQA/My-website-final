@@ -47,19 +47,8 @@ const Header = ({
         </div>
 
         {/* ===== DESKTOP BUTTONS ===== */}
+        {/* ===== DESKTOP BUTTONS ===== */}
         <div className="header-buttons">
-          <button
-            onClick={() =>
-              window.open(
-                "https://www.udemy.com/user/waleria-stojanowska/",
-                "_blank"
-              )
-            }
-            className="btn"
-          >
-            Мой профиль Udemy
-          </button>
-
           <a
             href="https://t.me/itbulgaria8"
             target="_blank"
@@ -75,6 +64,19 @@ const Header = ({
               theme === "light" ? "icon instagram light" : "icon instagram dark"
             }
           />
+
+          {/* 🔥 ВОТ СЮДА */}
+          <button
+            onClick={() =>
+              window.open(
+                "https://www.udemy.com/user/waleria-stojanowska/",
+                "_blank"
+              )
+            }
+            className="btn desktop"
+          >
+            Мой профиль Udemy
+          </button>
 
           <div className="switch" onClick={toggleTheme}>
             <div

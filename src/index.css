@@ -144,9 +144,7 @@ header a:hover {
 
 .btn.mobile {
   margin-right: 0;
-  margin-top: 5vw;
-  height: 18vw;
-  width: 60vw;
+  margin-top: 24px; /* аккуратный отступ под заголовком */
 }
 
 .btn:hover {
@@ -1357,7 +1355,7 @@ header a:hover {
   background-position: center;
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 1170px) {
   .menu {
     display: none;
   }
@@ -1374,6 +1372,12 @@ header a:hover {
     display: block;
     width: 55px;
     height: 55px;
+  }
+}
+
+@media (min-width: 1171px) {
+  .btn.mobile {
+    display: none;
   }
 }
 
