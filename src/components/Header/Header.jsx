@@ -13,37 +13,48 @@ const Header = ({
       <div className="navigation">
         {/* ===== DESKTOP MENU ===== */}
         <div className="menu">
-          <a onClick={upButton}>Курсы</a>
-          <a
+          <button type="button" onClick={upButton} className="link-like">
+            Курсы
+          </button>
+          <button
+            type="button"
             onClick={(e) => toBlock(e.target.getAttribute("height"))}
             height="700"
+            className="link-like"
           >
             Обо мне
-          </a>
-          <a
+          </button>
+          <button
+            type="button"
             onClick={(e) => toBlock(e.target.getAttribute("height"))}
             height="1230"
+            className="link-like"
           >
             Планируется
-          </a>
-          <a
+          </button>
+          <button
+            type="button"
             onClick={(e) => toBlock(e.target.getAttribute("height"))}
             height="1920"
+            className="link-like"
           >
             Отзывы
-          </a>
-          <a
+          </button>
+          <button
             onClick={(e) => toBlock(e.target.getAttribute("height"))}
             height="2500"
+            className="link-like"
           >
             Гарантии
-          </a>
-          <a
+          </button>
+          <button
+            type="button"
             onClick={(e) => toBlock(e.target.getAttribute("height"))}
             height="2500"
+            className="link-like"
           >
             Мои соцсети
-          </a>
+          </button>
         </div>
 
         {/* ===== DESKTOP BUTTONS ===== */}
@@ -52,6 +63,7 @@ const Header = ({
           <a
             href="https://t.me/itbulgaria8"
             target="_blank"
+            aria-label="Telegram"
             className={
               theme === "light" ? "icon telegram light" : "icon telegram dark"
             }
@@ -60,6 +72,7 @@ const Header = ({
           <a
             href="https://www.instagram.com/waleriaqa/"
             target="_blank"
+            aria-label="Instagram"
             className={
               theme === "light" ? "icon instagram light" : "icon instagram dark"
             }
@@ -98,6 +111,7 @@ const Header = ({
           <a
             href="https://t.me/itbulgaria8"
             target="_blank"
+            aria-label="Telegram"
             className={
               theme === "light" ? "icon telegram light" : "icon telegram dark"
             }
@@ -106,18 +120,16 @@ const Header = ({
           <a
             href="https://www.instagram.com/waleriaqa/"
             target="_blank"
+            aria-label="Instagram"
             className={
               theme === "light" ? "icon instagram light" : "icon instagram dark"
             }
           />
 
-          <div className="switch switch-mobile" onClick={toggleTheme}>
+          {/* 🔥 ТОТ ЖЕ САМЫЙ SWITCH */}
+          <div className="switch" onClick={toggleTheme}>
             <div
-              className={
-                theme === "light"
-                  ? "theme light theme-mobile"
-                  : "theme dark theme-mobile"
-              }
+              className={theme === "light" ? "theme light" : "theme dark"}
               style={{
                 transform: isDarkTheme ? "translateX(34px)" : "translate(0)",
               }}
