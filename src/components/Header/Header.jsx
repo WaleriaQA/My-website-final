@@ -4,8 +4,12 @@ const Header = ({
   theme,
   isDarkTheme,
   toggleTheme,
-  upButton,
-  toBlock,
+  onCourses,
+  onAbout,
+  onPlanned,
+  onReviews,
+  onGuarantees,
+  onSocials,
   handleOpenModalMenu,
 }) => {
   return (
@@ -13,52 +17,27 @@ const Header = ({
       <div className="navigation">
         {/* ===== DESKTOP MENU ===== */}
         <div className="menu">
-          <button type="button" onClick={upButton} className="link-like">
+          <button type="button" onClick={onCourses} className="link-like">
             Курсы
           </button>
 
-          <button
-            type="button"
-            onClick={(e) => toBlock(e.target.getAttribute("height"))}
-            height="700"
-            className="link-like"
-          >
+          <button type="button" onClick={onAbout} className="link-like">
             Обо мне
           </button>
 
-          <button
-            type="button"
-            onClick={(e) => toBlock(e.target.getAttribute("height"))}
-            height="1230"
-            className="link-like"
-          >
+          <button type="button" onClick={onPlanned} className="link-like">
             Планируется
           </button>
 
-          <button
-            type="button"
-            onClick={(e) => toBlock(e.target.getAttribute("height"))}
-            height="1920"
-            className="link-like"
-          >
+          <button type="button" onClick={onReviews} className="link-like">
             Отзывы
           </button>
 
-          <button
-            type="button"
-            onClick={(e) => toBlock(e.target.getAttribute("height"))}
-            height="2500"
-            className="link-like"
-          >
+          <button type="button" onClick={onGuarantees} className="link-like">
             Гарантии
           </button>
 
-          <button
-            type="button"
-            onClick={(e) => toBlock(e.target.getAttribute("height"))}
-            height="2500"
-            className="link-like"
-          >
+          <button type="button" onClick={onSocials} className="link-like">
             Мои соцсети
           </button>
         </div>
