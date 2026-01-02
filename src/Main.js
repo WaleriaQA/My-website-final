@@ -7,65 +7,70 @@ import Portfolio from "./components/Portfolio/Portfolio";
 import Reviews from "./components/Reviews/Reviews";
 import Guarantees from "./components/Guarantees/Guarantees";
 import Footer from "./components/Footer/Footer";
-
 import ScrollUpButton from "./components/ScrollUpButton/ScrollUpButton";
-
-import AllGallery from "./AllGallery";
-
+import AllGallery from "./components/Gallery/AllGallery";
 import YouTubeThumbnails from "./YouTubeThumbnails";
 import YouTubeDesign from "./YouTubeDesign";
 import InstagramStories from "./InstagramStories";
-import Review from "./Review";
 import Theme from "./Theme";
 import ModalMenu from "./ModalMenu";
-// import Resize from "./Resize";
 import SocialLinks from "./SocialLinks";
 import Banners from "./Banners";
 
-const Main = () => {
-  // const isPortrait = Resize();
+const HEADER_OFFSET = 110; // высота фиксированного header
 
+const Main = () => {
+  /* ===== ORIENTATION ===== */
   const [isPortrait, setIsPortrait] = useState(
     window.innerWidth > window.innerHeight
   );
+
   useEffect(() => {
     const handleResize = () => {
       setIsPortrait(window.innerWidth > window.innerHeight);
     };
     window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  /* ===== THEME ===== */
   const { theme, setTheme } = Theme();
-  const [isDarkTheme, setIsDarkTheme] = useState(() => {
-    const savedTheme = localStorage.getItem("theme");
-    return savedTheme === "dark";
-  });
+  const [isDarkTheme, setIsDarkTheme] = useState(
+    () => localStorage.getItem("theme") === "dark"
+  );
 
   const toggleTheme = () => {
-    if (isDarkTheme) {
-      lightTheme();
-    } else {
-      darkTheme();
-    }
+    setTheme(isDarkTheme ? "light" : "dark");
     setIsDarkTheme(!isDarkTheme);
   };
 
-  const lightTheme = () => {
-    setTheme("light");
+  /* ===== REFS ===== */
+  const coursesRef = useRef(null);
+  const aboutRef = useRef(null);
+  const plannedRef = useRef(null);
+  const reviewsRef = useRef(null);
+  const guaranteesRef = useRef(null);
+  const socialsRef = useRef(null);
+
+  const scrollToRef = (ref) => {
+    if (!ref?.current) return;
+    window.scrollTo({
+      top: ref.current.offsetTop - HEADER_OFFSET,
+      behavior: "smooth",
+    });
   };
 
-  const darkTheme = () => {
-    setTheme("dark");
+  /* ===== MODAL MENU ===== */
+  const [showModalMenu, setShowModalMenu] = useState(false);
+  const closeModalAndScroll = (ref) => {
+    scrollToRef(ref);
+    setShowModalMenu(false);
   };
 
+  /* ===== PORTFOLIO ===== */
+  const [selectedCategory, setSelectedCategory] = useState("All");
   const renderComponent = () => {
     switch (selectedCategory) {
-      case "All":
-        return <AllGallery />;
       case "Banners":
         return <Banners />;
       case "YouTubeThumbnails":
@@ -79,92 +84,86 @@ const Main = () => {
     }
   };
 
-  const [showModal, setShowModal] = useState(false);
-  const [showModalMenu, setShowModalMenu] = useState(false);
-  const [selectedCategory, setSelectedCategory] = useState("All");
-
-  const handleOpenModal = () => {
-    setShowModal(true);
-  };
-
-  const handleCloseModal = () => {
-    setShowModal(false);
-  };
-
-  const handleOpenModalMenu = () => {
-    setShowModalMenu(true);
-  };
-
-  const handleCloseModalMenu = () => {
-    setShowModalMenu(false);
-  };
-
-  const upButton = () => {
-    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-  };
-
-  const toBlock = (height) => {
-    window.scrollTo({ top: height, left: 0, behavior: "smooth" });
-  };
-
   return (
     <div>
       <Header
-        isPortrait={isPortrait}
         theme={theme}
         isDarkTheme={isDarkTheme}
         toggleTheme={toggleTheme}
-        upButton={upButton}
-        toBlock={toBlock}
-        handleOpenModalMenu={handleOpenModalMenu}
+        onCourses={() => scrollToRef(coursesRef)}
+        onAbout={() => scrollToRef(aboutRef)}
+        onPlanned={() => scrollToRef(plannedRef)}
+        onReviews={() => scrollToRef(reviewsRef)}
+        onGuarantees={() => scrollToRef(guaranteesRef)}
+        onSocials={() => scrollToRef(socialsRef)}
+        handleOpenModalMenu={() => setShowModalMenu(true)}
       />
-      <ModalMenu show={showModalMenu} onClose={handleCloseModalMenu}>
-        <a onClick={upButton}>Курсы</a>
-        <a
-          onClick={(e) => toBlock(e.target.getAttribute("height"))}
-          height="2500"
+
+      <ModalMenu show={showModalMenu} onClose={() => setShowModalMenu(false)}>
+        <button
+          className="link-like"
+          onClick={() => closeModalAndScroll(coursesRef)}
+        >
+          Курсы
+        </button>
+        <button
+          className="link-like"
+          onClick={() => closeModalAndScroll(aboutRef)}
         >
           Обо мне
-        </a>
-        <a
-          onClick={(e) => toBlock(e.target.getAttribute("height"))}
-          height="3500"
+        </button>
+        <button
+          className="link-like"
+          onClick={() => closeModalAndScroll(plannedRef)}
         >
           Планируется
-        </a>
-        <a
-          onClick={(e) => toBlock(e.target.getAttribute("height"))}
-          height="4000"
+        </button>
+        <button
+          className="link-like"
+          onClick={() => closeModalAndScroll(reviewsRef)}
         >
           Отзывы
-        </a>
-        <a
-          onClick={(e) => toBlock(e.target.getAttribute("height"))}
-          height="5000"
+        </button>
+        <button
+          className="link-like"
+          onClick={() => closeModalAndScroll(guaranteesRef)}
         >
           Гарантии
-        </a>
-        <a
-          onClick={(e) => toBlock(e.target.getAttribute("height"))}
-          height="6200"
+        </button>
+        <button
+          className="link-like"
+          onClick={() => closeModalAndScroll(socialsRef)}
         >
           Соцсети
-        </a>
+        </button>
       </ModalMenu>
+
       <Welcome isPortrait={isPortrait} />
-      <Courses />
-      <AboutMe isPortrait={isPortrait} />
-      <Portfolio
-        isPortrait={isPortrait}
-        selectedCategory={selectedCategory}
-        setSelectedCategory={setSelectedCategory}
-        renderComponent={renderComponent}
-      />
-      <Reviews isPortrait={isPortrait} />
-      <Guarantees isPortrait={isPortrait} />
-      <SocialLinks />
+      <div ref={coursesRef}>
+        <Courses />
+      </div>
+      <div ref={aboutRef}>
+        <AboutMe isPortrait={isPortrait} />
+      </div>
+      <div ref={plannedRef}>
+        <Portfolio
+          isPortrait={isPortrait}
+          selectedCategory={selectedCategory}
+          setSelectedCategory={setSelectedCategory}
+          renderComponent={renderComponent}
+        />
+      </div>
+      <div ref={reviewsRef}>
+        <Reviews isPortrait={isPortrait} />
+      </div>
+      <div ref={guaranteesRef}>
+        <Guarantees isPortrait={isPortrait} />
+      </div>
+      <div ref={socialsRef}>
+        <SocialLinks />
+      </div>
       <Footer />
-      <ScrollUpButton isPortrait={isPortrait} />;
+      <ScrollUpButton isPortrait={isPortrait} />
     </div>
   );
 };

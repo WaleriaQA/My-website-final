@@ -1,9 +1,9 @@
 import React from "react";
 
-import Resize from "./Resize";
+import useResize from "./components/Gallery/useResize";
 
 const YouTubeThumbnails = () => {
-  const isPortrait = Resize();
+  const isPortrait = useResize();
   return (
     <div>
       {isPortrait ? (

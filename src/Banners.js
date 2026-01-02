@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Banners.css";
-import Resize from "./Resize";
+import useResize from "./components/Gallery/useResize";
 
 const importAll = (r) => r.keys().map(r);
 const images = importAll(
@@ -8,7 +8,7 @@ const images = importAll(
 );
 
 const Banners = () => {
-  const isPortrait = Resize();
+  const isPortrait = useResize();
   const [visibleRows, setVisibleRows] = useState(2);
   const [selectedImage, setSelectedImage] = useState(null);
   const imagesPerRow = 4;
