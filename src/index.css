@@ -197,12 +197,18 @@ header a:hover {
 }
 
 .icon-menu {
-  display: none; /* по умолчанию скрыт на десктопе */
+  display: none;
   width: 55px;
   height: 55px;
   border-radius: 50%;
-  background-color: var(--switch-background);
-  border: 1px solid var(--main-elements-color);
+
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+
+  border: none;
+  outline: none;
   cursor: pointer;
 }
 
@@ -225,11 +231,11 @@ header a:hover {
 }
 
 .icon-menu.light {
-  content: url(/public/icons/menu-light1.png);
+  background-image: url("/public/icons/menu-light1.svg");
 }
 
 .icon-menu.dark {
-  content: url(/public/icons/menu-dark.png);
+  background-image: url("/public/icons/menu-light1.svg");
 }
 
 .icon:hover {
@@ -308,8 +314,10 @@ header a:hover {
 
   .icon-menu,
   .icon-mobile {
+    display: block;
     width: 13vw;
-    height: 12vw;
+    height: 13vw;
+    border-radius: 50%;
   }
 }
 
@@ -1386,8 +1394,12 @@ header a:hover {
 
   .icon-menu {
     display: block;
-    width: 55px;
-    height: 55px;
+    width: 62px;
+    height: 62px;
+  }
+
+  .icon-menu:hover {
+    filter: drop-shadow(0px 0px 35px pink);
   }
 }
 
