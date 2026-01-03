@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import Review from "../../Review";
+import Review from "./Review";
 
 const Reviews = ({ isPortrait }) => {
   const containerRef = useRef(null);

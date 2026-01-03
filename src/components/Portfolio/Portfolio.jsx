@@ -1,9 +1,30 @@
-const Portfolio = ({
-  isPortrait,
-  selectedCategory,
-  setSelectedCategory,
-  renderComponent,
-}) => {
+import React, { useState } from "react";
+
+import AllGallery from "../Gallery/AllGallery";
+import Banners from "../Banner/Banners";
+
+import YouTubeThumbnails from "./YouTubeThumbnails";
+import YouTubeDesign from "./YouTubeDesign";
+import InstagramStories from "./InstagramStories";
+
+const Portfolio = ({ isPortrait }) => {
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
+  const renderComponent = () => {
+    switch (selectedCategory) {
+      case "Banners":
+        return <Banners />;
+      case "YouTubeThumbnails":
+        return <YouTubeThumbnails />;
+      case "YouTubeDesign":
+        return <YouTubeDesign />;
+      case "InstagramStories":
+        return <InstagramStories />;
+      default:
+        return <AllGallery />;
+    }
+  };
+
   return (
     <>
       <div className="portfolio-block">
@@ -32,8 +53,7 @@ const Portfolio = ({
             <p
               className={`tag ${
                 selectedCategory === "Banners" ? "selected" : ""
-              }
-                      ${isPortrait ? "" : "mobile"}`}
+              } ${isPortrait ? "" : "mobile"}`}
               onClick={() => setSelectedCategory("Banners")}
             >
               Планируемые курсы

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Banners.css";
-import useResize from "./components/Gallery/useResize";
+import useResize from "../Gallery/useResize";
 
 const importAll = (r) => r.keys().map(r);
 const images = importAll(

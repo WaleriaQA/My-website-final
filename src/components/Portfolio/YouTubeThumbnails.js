@@ -1,6 +1,6 @@
 import React from "react";
 
-import useResize from "./components/Gallery/useResize";
+import useResize from "../Gallery/useResize";
 
 const YouTubeThumbnails = () => {
   const isPortrait = useResize();

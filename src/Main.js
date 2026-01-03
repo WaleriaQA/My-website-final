@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+
 import Header from "./components/Header/Header";
 import Welcome from "./components/Welcome/Welcome";
 import Courses from "./components/Courses/Courses";
@@ -8,16 +9,12 @@ import Reviews from "./components/Reviews/Reviews";
 import Guarantees from "./components/Guarantees/Guarantees";
 import Footer from "./components/Footer/Footer";
 import ScrollUpButton from "./components/ScrollUpButton/ScrollUpButton";
-import AllGallery from "./components/Gallery/AllGallery";
-import YouTubeThumbnails from "./YouTubeThumbnails";
-import YouTubeDesign from "./YouTubeDesign";
-import InstagramStories from "./InstagramStories";
-import Theme from "./Theme";
-import ModalMenu from "./ModalMenu";
-import SocialLinks from "./SocialLinks";
-import Banners from "./Banners";
+import ModalMenu from "./components/UI/ModalMenu";
+import SocialLinks from "./components/UI/SocialLinks";
 
-const HEADER_OFFSET = 110; // высота фиксированного header
+import useTheme from "./theme/useTheme";
+
+const HEADER_OFFSET = 110;
 
 const Main = () => {
   /* ===== ORIENTATION ===== */
@@ -34,15 +31,7 @@ const Main = () => {
   }, []);
 
   /* ===== THEME ===== */
-  const { theme, setTheme } = Theme();
-  const [isDarkTheme, setIsDarkTheme] = useState(
-    () => localStorage.getItem("theme") === "dark"
-  );
-
-  const toggleTheme = () => {
-    setTheme(isDarkTheme ? "light" : "dark");
-    setIsDarkTheme(!isDarkTheme);
-  };
+  const { theme, isDarkTheme, toggleTheme } = useTheme();
 
   /* ===== REFS ===== */
   const coursesRef = useRef(null);
@@ -62,26 +51,10 @@ const Main = () => {
 
   /* ===== MODAL MENU ===== */
   const [showModalMenu, setShowModalMenu] = useState(false);
+
   const closeModalAndScroll = (ref) => {
     scrollToRef(ref);
     setShowModalMenu(false);
-  };
-
-  /* ===== PORTFOLIO ===== */
-  const [selectedCategory, setSelectedCategory] = useState("All");
-  const renderComponent = () => {
-    switch (selectedCategory) {
-      case "Banners":
-        return <Banners />;
-      case "YouTubeThumbnails":
-        return <YouTubeThumbnails />;
-      case "YouTubeDesign":
-        return <YouTubeDesign />;
-      case "InstagramStories":
-        return <InstagramStories />;
-      default:
-        return <AllGallery />;
-    }
   };
 
   return (
@@ -139,29 +112,31 @@ const Main = () => {
       </ModalMenu>
 
       <Welcome isPortrait={isPortrait} />
+
       <div ref={coursesRef}>
         <Courses />
       </div>
+
       <div ref={aboutRef}>
         <AboutMe isPortrait={isPortrait} />
       </div>
+
       <div ref={plannedRef}>
-        <Portfolio
-          isPortrait={isPortrait}
-          selectedCategory={selectedCategory}
-          setSelectedCategory={setSelectedCategory}
-          renderComponent={renderComponent}
-        />
+        <Portfolio isPortrait={isPortrait} />
       </div>
+
       <div ref={reviewsRef}>
         <Reviews isPortrait={isPortrait} />
       </div>
+
       <div ref={guaranteesRef}>
         <Guarantees isPortrait={isPortrait} />
       </div>
+
       <div ref={socialsRef}>
         <SocialLinks />
       </div>
+
       <Footer />
       <ScrollUpButton isPortrait={isPortrait} />
     </div>
