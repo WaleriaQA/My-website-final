@@ -69,6 +69,7 @@ code {
 }
 
 /*   ---   HEADER   ---   */
+
 header {
   margin-left: -5vw;
   margin-right: -5vw;
@@ -96,7 +97,7 @@ header {
   flex-wrap: nowrap;
 }
 .menu a {
-  white-space: nowrap; /* запрещаем перенос "Обо мне" */
+  white-space: nowrap;
 }
 
 header a {
@@ -156,7 +157,7 @@ header a:hover {
 
 .btn.mobile {
   margin-right: 0;
-  margin-top: 24px; /* аккуратный отступ под заголовком */
+  margin-top: 24px;
 }
 
 .btn:hover {
@@ -904,6 +905,7 @@ header a:hover {
 }
 
 /*   ---   PORTFOLIO BLOCK   ---   */
+
 .portfolio-block {
   height: auto;
 }
@@ -1053,7 +1055,7 @@ header a:hover {
   font-weight: 500;
 }
 
-/* ===== CAROUSEL ===== */
+/* --- CAROUSEL --- */
 
 .review-carausel {
   display: flex;
@@ -1077,7 +1079,7 @@ header a:hover {
   display: none;
 }
 
-/* ===== CARD ===== */
+/* --- CARD --- */
 
 .review-card {
   flex: 0 0 calc((100% - 32px) / 3);
@@ -1093,14 +1095,13 @@ header a:hover {
   position: relative;
 }
 
-/* ТЕКСТ ОТЗЫВА — НЕ МЕНЯЕМ */
 .review-block .review {
   font-size: 20px;
   line-height: 25px;
   width: 95%;
 }
 
-/* ===== ARROWS ===== */
+/* --- ARROWS --- */
 
 .next-button {
   width: 55px;
@@ -1162,19 +1163,15 @@ header a:hover {
   transform: translateX(4px);
 }
 
-/* ===== TABLET ===== */
-
 @media screen and (max-width: 1200px) {
   .review-card {
     flex: 0 0 calc((100% - 16px) / 2);
   }
 }
 
-/* ===== MOBILE (СТРОГО 1 КАРТОЧКА) ===== */
-
 @media screen and (max-width: 768px) {
   .review-carausel {
-    padding: 0; /* 🔥 ВАЖНО */
+    padding: 0;
     overflow: visible;
   }
 
@@ -1195,7 +1192,6 @@ header a:hover {
     margin: 0 auto;
   }
 
-  /* стрелки скрываем */
   .next-button {
     display: none;
   }
@@ -1262,19 +1258,19 @@ header a:hover {
 .point {
   margin-top: 35px;
 }
-/* Убираем min-height для планшетов */
+
 @media (max-width: 1024px) and (min-width: 769px) {
   .guarantees-block {
-    min-height: unset; /* убираем фиксированную высоту */
-    padding-bottom: 100px; /* добавляем «воздух» под контент */
+    min-height: unset;
+    padding-bottom: 100px;
   }
 
   .guarantees-block h1 {
-    margin-bottom: 40px; /* увеличиваем пространство между заголовком и списком */
+    margin-bottom: 40px;
   }
 
   .guarantees-points li {
-    margin-bottom: 30px; /* увеличиваем отступ между пунктами списка */
+    margin-bottom: 30px;
   }
 }
 
@@ -1369,10 +1365,10 @@ header a:hover {
     display: none;
   }
   .header-buttons {
-    display: none; /* прячем десктопные кнопки */
+    display: none;
   }
   .header-buttons-mobile {
-    display: flex; /* показываем мобильный блок */
+    display: flex;
     gap: 10px;
     align-items: center;
   }

@@ -34,7 +34,7 @@
   width: 150px;
   height: 150px;
   transition: transform 0.3s ease;
-  object-fit: contain; /* сохранить пропорции и вписать */
+  object-fit: contain;
   margin: 0 10px;
 }
 

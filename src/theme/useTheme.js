@@ -22,7 +22,7 @@ const useTheme = () => {
     theme,
     isDarkTheme,
     toggleTheme,
-    setTheme, // оставляем на будущее, вдруг понадобится
+    setTheme,
   };
 };
 

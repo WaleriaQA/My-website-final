@@ -66,11 +66,6 @@
   background: white;
 }
 
-/* .modal-image-close-button:hover {
-    filter: drop-shadow(0px opx 30px #4824ff75);
-    background: white;
-} */
-
 .modal-image-close-button::before,
 .modal-image-close-button::after {
   content: "";

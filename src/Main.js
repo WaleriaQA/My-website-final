@@ -17,7 +17,8 @@ import useTheme from "./theme/useTheme";
 const HEADER_OFFSET = 110;
 
 const Main = () => {
-  /* ===== ORIENTATION ===== */
+  /* --- ORIENTATION --- */
+
   const [isPortrait, setIsPortrait] = useState(
     window.innerWidth > window.innerHeight
   );
@@ -30,10 +31,12 @@ const Main = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  /* ===== THEME ===== */
+  /* --- THEME --- */
+
   const { theme, isDarkTheme, toggleTheme } = useTheme();
 
-  /* ===== REFS ===== */
+  /* --- REFS --- */
+
   const coursesRef = useRef(null);
   const aboutRef = useRef(null);
   const plannedRef = useRef(null);
@@ -49,7 +52,8 @@ const Main = () => {
     });
   };
 
-  /* ===== MODAL MENU ===== */
+  /* --- MODAL MENU --- */
+
   const [showModalMenu, setShowModalMenu] = useState(false);
 
   const closeModalAndScroll = (ref) => {

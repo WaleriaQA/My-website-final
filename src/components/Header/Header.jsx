@@ -15,7 +15,8 @@ const Header = ({
   return (
     <header>
       <div className="navigation">
-        {/* ===== DESKTOP MENU ===== */}
+        {/* --- DESKTOP MENU --- */}
+
         <div className="menu">
           <button type="button" onClick={onCourses} className="link-like">
             Курсы
@@ -42,7 +43,8 @@ const Header = ({
           </button>
         </div>
 
-        {/* ===== DESKTOP BUTTONS ===== */}
+        {/* --- DESKTOP BUTTONS --- */}
+
         <div className="header-buttons">
           <a
             href="https://t.me/itbulgaria8"
@@ -86,7 +88,8 @@ const Header = ({
           </div>
         </div>
 
-        {/* ===== MOBILE BUTTONS + BURGER ===== */}
+        {/* --- MOBILE BUTTONS + BURGER --- */}
+
         <div className="header-buttons-mobile">
           <button
             type="button"
