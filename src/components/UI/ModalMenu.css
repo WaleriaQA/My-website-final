@@ -1,38 +1,38 @@
 .modal-menu-backdrop {
   position: fixed;
-  width: 100vw;
-  height: 100vh;
+  inset: 0;
   display: flex;
   justify-content: flex-end;
-  opacity: 0;
+  align-items: flex-start;
+  padding-top: 8vh;
+  padding-right: 10px;
+  background: rgba(0, 0, 0, 0.25);
   visibility: hidden;
-  transition: opacity 0.5s ease, visibility 0.5s ease;
   z-index: 1000;
 }
 
 .modal-menu-backdrop.show {
   opacity: 1;
   visibility: visible;
-  align-items: flex-start;
 }
 
 .modal-menu-content {
   display: flex;
   flex-direction: column;
-  background: white;
+  background: var(--main-background);
+  color: var(--main-text-color);
   border-radius: 16px;
   width: 30vw;
   max-width: 150px;
-  font-size: 7vw;
   border: 3px solid #eeebff;
-
   padding: 24px 0;
 }
 
 .modal-menu-content a {
-  display: block;
-  padding: 12px 24px;
+  text-decoration: none;
+  padding: 12px 20px;
   border-bottom: 1px solid #eeebff50;
+  color: var(--main-text-color);
 }
 
 .modal-menu-content a + a {

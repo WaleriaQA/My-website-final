@@ -1,32 +1,27 @@
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useEffect, useCallback } from "react";
 import "./ModalMenu.css";
 
 const ModalMenu = ({ show, onClose, children }) => {
-  const [isVisible, setIsVisible] = useState(false);
   const handleKeyDown = useCallback(
     (event) => {
-      if (event.key === "Escape") {
-        onClose();
-      }
+      if (event.key === "Escape") onClose();
     },
     [onClose]
   );
 
   useEffect(() => {
     if (show) {
-      setIsVisible(true);
       document.addEventListener("keydown", handleKeyDown);
     } else {
-      const timer = setTimeout(() => setIsVisible(false), 800);
       document.removeEventListener("keydown", handleKeyDown);
-      return () => clearTimeout(timer);
     }
+
+    return () => document.removeEventListener("keydown", handleKeyDown);
   }, [show, handleKeyDown]);
 
   return (
     <div
       className={`modal-menu-backdrop ${show ? "show" : ""}`}
-      style={{ display: isVisible }}
       onClick={onClose}
     >
       <div className="modal-menu-content" onClick={(e) => e.stopPropagation()}>
